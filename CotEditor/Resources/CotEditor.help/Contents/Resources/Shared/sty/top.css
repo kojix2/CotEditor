@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/*
+ Help Style Sheet for Top Page
+ 
+ CotEditor
+ https://coteditor.com
+ 
+ © 2006-2025 CotEditor Project
+*/
+
+
+:root {
+	-webkit-text-size-adjust: 100%;
+	font: 350 13px/1.5 -apple-system, sans-serif;
+	text-rendering: optimizeLegibility;
+	color: -apple-system-label;
+}
+body {
+	margin: 1rem 2.75rem;
+}
+
+a {
+	text-decoration: none;
+}
+a:link, a:visited {
+	color: -apple-system-blue;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+header {
+	position: relative;
+	height: 80px;
+	padding: 4px 0;
+	border-bottom: 1px solid -apple-system-quaternary-label;
+	padding-left: 80px;
+}
+header img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 76px;
+}
+header h1 {
+	font-size: 210%;
+	font-weight: 650;
+	margin: 0 0 0.6rem;
+}
+header .toc::before {
+	display: inline-block;
+	content: url(../gfx/toc.svg);
+	vertical-align: -2px;
+	padding-right: 0.3rem;
+}
+
+
+/* topic */
+
+main > section {
+	padding: 1.5rem 0;
+	border-bottom: solid 1px -apple-system-grid;
+}
+h2 {
+	font-weight: 500;
+	font-size: 130%;
+}
+
+img.snapshot {
+	border: 0.5px solid -apple-system-tertiary-label;
+	border-radius: 3px;
+}
+
+section ul {
+	list-style-type: none;
+	padding: 0;
+}
+section ul li a::after {
+	content: ' ›';
+	opacity: 0.75;
+}
+
+
+/* dark mode */
+
+:root {
+	color-scheme: light dark;
+}

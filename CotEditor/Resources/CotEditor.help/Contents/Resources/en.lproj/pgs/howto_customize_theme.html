@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="keywords" content="theme, syntax coloring, highlight"/>
+	<link rel="stylesheet" href="../../Shared/sty/standard.css"/>
+	<script defer src="../../Shared/js/toc.js"></script>
+	
+	<title>Customize themes in CotEditor on Mac</title>
+</head>
+
+<body>
+
+<h1>Customize themes in CotEditor on Mac</h1>
+
+<p>CotEditor’s <dfn>theme</dfn> is a collection of settings about the editor’s coloring.</p>
+
+<figure>
+	<img class="bordered" srcset="../gfx/theme@2x.png 2x" alt="Screenshot of the theme setting view"/>
+</figure>
+
+
+<h2>Coloring components available in themes</h2>
+
+<p>CotEditor themes offer the ability to set the color scheme of the elements that compose the editor view.</p>
+
+
+<table>
+	<thead>
+		<tr><th>Item</th><th>System Color</th><th>Opacity</th><th>Description</th></tr>
+	</thead>
+	<tbody>
+		<tr><th>Text</th>
+			<td></td>
+			<td></td>
+			<td>The basic text color used for non-highlighted text. Line numbers also use the color set here.</td>
+		</tr>
+		<tr><th>Invisibles</th>
+			<td></td>
+			<td align="center">✔︎</td>
+			<td>The color of invisible characters that can be set in the <a href="settings_window.html">Window settings</a>.</td>
+		</tr>
+		<tr><th>Cursor</th>
+			<td align="center">✔︎</td>
+			<td align="center">✔︎</td>
+			<td>The color of the cursor displayed at the text insertion point.</td>
+		</tr>
+		<tr><th>Background</th>
+			<td></td>
+			<td></td>
+			<td>The background of the entire editor.</td>
+		</tr>
+		<tr><th>Current Line</th>
+			<td></td>
+			<td align="center">✔︎</td>
+			<td>The background of the current line when the <a href="settings_window.html">Window settings</a> is set to show the current line.</td>
+		</tr>
+		<tr><th>Selection</th>
+			<td align="center">✔︎</td>
+			<td></td>
+			<td>Background of the selection when text is selected in the editor.</td>
+		</tr>
+		<tr><th>Highlight</th>
+			<td align="center">✔︎</td>
+			<td></td>
+			<td>Color for partial highlighting of text, for example when “Highlight instances of selected text” is enabled in the <a href="settings_window.html">Edit settings</a>. This color with reduced opacity is used as a base for the highlight background.</td>
+		</tr>
+		<tr><th>Syntax</th>
+			<td></td>
+			<td align="center">✔︎</td>
+			<td>Text color for each <a href="syntax_highlight_settings.html">syntax highlighting</a> element set in the syntax definition.</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<p>Some editor components, such as cursors and selections, have a system color determined by the macOS Appearance system settings. When “Use system colors” is selected in a CotEditor theme, the highlight color set by the system (System Settings &gt; Appearance) is used instead of the theme-specific color.</p>
+
+<p>Invisible characters, cursors, current lines, and syntax highlighting can have opacity set to a color. On the other hand, opacity cannot be set for the basic text color and some other components. These elements whose opacity cannot be set by the theme may adjust their opacity automatically depending on the opacity of the editor itself and other conditions.</p>
+
+
+<h2>Customize a theme</h2>
+
+<p>To select a theme to customize:</p>
+<ol>
+	<li>Choose CotEditor &gt; Settings.</li>
+	<li>Select the Appearance pane.</li>
+	<li>Select the theme you want to customize from the theme list.</li>
+</ol>
+
+<p>To use an existing theme as a guide for creating your own, choose the Duplicate command in the Action pop-up menu <img src="../../Shared/gfx/ellipsis.circle.svg" alt="with the ellipsis symbol" style="vertical-align: -2px"/> instead. You can also export your themes and import themes that are created by others.</p>
+
+
+<p>To customize a theme:</p>
+<ol>
+	<li>Click a color well in the theme editor.</li>
+	<li>Select a color in the Color window.</li>
+</ol>
+
+<p>The change is saved automatically and applied immediately.</p>
+
+<p>If you select the “Use system color” option, the color specified in the system (System Settings &gt; Appearance) is used for the background of the selected text in the editor or the cursors, instead of a fixed color.</p>
+
+
+<h2>Switch theme according to the appearance</h2>
+
+<p>A pair of themes with the same theme name but “ (Dark)” (with a space) at the end of one of them automatically switches themes depending on the window’s appearance. In this case, the theme name for light mode can be either the theme name only or the theme name with “ (Light)” at the end. For example, bundled “Anura” and “Anura (Dark)” themes are a pair. So, “Anura” is used when the appearance is light, and “Anura (Dark)” is used in Dark Mode.</p>
+
+<p>However, if you select a theme opposite to the appearance as the default theme, that theme takes precedence regardless of the appearance.</p>
+
+
+
+<h2>File format of CotEditor themes</h2>
+
+<p>A CotEditor theme file must have the .cottheme extension and its format is based on JSON with hexadecimal color values with a <code>#</code> symbol.</p>
+
+
+<section id="cf">
+<h2>See also</h2>
+<ul>
+	<li><a href="settings_appearance.html">Change Appearance settings</a></li>
+</ul>
+</section>
+
+</body>
+</html>

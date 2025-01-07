@@ -1,134 +1,157 @@
+# Contributing Guidelines
 
-Contributing Guidelines
-==========================
-
-General Feedback
---------------------------
+## General Feedback
 
 Create a new issue on our [Issues page](https://github.com/coteditor/CotEditor/issues). You can write your feedback either in English (recommended) or in Japanese.
 
 
-### Bug reports
+### Issue reports
 
-Search for existing issues first. If you find your issue previously reported, post your case to that issue; otherwise, create a new one by filling up the "Bug report" template. Do not hesitate to post the same phenomenon to the existing issue as long as the cases are less than 10. Multiple instances help a lot to find out the cause. In that situation, include your environment (versions of both CotEditor and macOS) in your post.
+Search for existing issues first. If you find your issue previously reported, post your case to that issue; otherwise, create a new one by filling out the “Bug report” template. Do not hesitate to post the same phenomenon as the existing issue as long as there are fewer than 10 cases. Multiple instances help a lot in finding the cause. In that situation, include your environment (versions of both CotEditor and macOS) in your post.
 
-If possible, attach screenshots/screencasts of the issue you face. It is also helpful to attach sample files that can reproduce the issue.
+If possible, attach screenshots or screencasts of the issue you face. It is also helpful to attach sample files that can reproduce the issue.
 
 If your issue relates to the syntax highlight, include the sample code that can reproduce the unwanted highlight in your post.
 
 
 ### Feature requests
 
-Search for existing requests first. If you find your feature previously requested, post your comment to that issue; otherwise, create a new one by filling up the "Feature request" template.
-Create an issue per feature instead of listing multiple features on one issue page.
+Search for existing requests first. If you find your idea among the requests already posted, post your comment on that issue; otherwise, create a new one by filling out the “Feature request” template.
+Create an issue per feature instead of listing multiple features in a single post.
 
 
 
-Pull-Request
---------------------------
+## Pull Requests
 
 ### General Code Improvements
 
-Bug fixes and improvements are welcome. If you want to add a new feature or the change is huge, it's better at first to ask the team whether your idea will be accepted.
+Bug fixes and improvements are welcome. If you want to add a new feature or make a major change, it's better to ask the team first whether your idea will be accepted.
 
 By adding code, please follow our coding style guide below.
 
 
-### Localization
+### Localizations
 
-Fixing/updating existing localizations is always welcome. The project team adds `FIXME:` tag as a comment in the localized strings files if there are updated strings to be localized.
+Fixing/updating existing localizations is always welcome. See each .xcstrings file to find which strings need to be localized or reviewed by native speakers. By localization, please refer to the comments and key naming so that you can know where and how each string will be used. If you are uncertain, feel free to ask @1024jp.
 
-If your localization makes the Autolayout destroy, try first making the sentence shorter. However, if it's impossible, then just tell us about it with a screenshot when you make a pull-request. We'll update the storyboard file to layout your localized terms correctly.
-
-#### Good references for localization
-
-By localization, use macOS standard terms. It might be helpful to study native Apple applications like TextEdit.app or System Settings to know how Apple localizes terms in their apps.
-
-Especially, follow the terms of the following applications.
-
-- Menu item titles in TextEdit.app
-- Find panel in Pages.app
-- Some setting messages in ScriptEditor.app
-
-We recommend to utilize [Apple Localization Terms Glossary for macOS](https://applelocalization.com/macos) by Kishikawa Katsumi to find macOS-friendly expressions. This service enables us to search in the texts localized by Apple for macOS applications and frameworks.
-You also need to take care of how Apple treats punctuation characters and symbols. For example, regarding quotation marks, they normally prefer the typographer's ones.
-
+If your localization destroys some layout in views, try first making the sentence shorter. However, if it's impossible, then just tell us about it with a screenshot when you make a pull request. We'll update the view to lay out your localized text correctly.
 
 #### Submitting a new localization
 
-Copy one of a whole .lproj directory and use it as a template. We recommend using `CotEditor/en-GB.lproj/` directory because they are always up-to-date.
-Note that you don't need to localize the Unicode block names in the `Unicode.strings` file.
+Currently, the CotEditor project only accepts new localizations whose provider can maintain them thereafter. When submitting a new localization, please explicitly tell us if you also intend to be a localization maintainer. The standard maintenance process of localization is described in the following subsection.
 
-Continuous maintenance of the localization is highly recommended when providing a new localization. Please tell us if you also intend to be a localization maintainer when submitting a new localization. When we have new strings to be localized, we call the localization maintainers by creating an issue with the `@` mention on GitHub so that they can keep all their localized strings up to date.
+You have two options for adding a new localization to CotEditor.app. Choose one of them depending on your knowledge and preference:
+
+- Option 1: Add a new localization in Xcode by yourself and make a pull request (for those who get used to git and Xcode projects):
+    - Open CotEditor.xcodeproj in Xcode, go to Project > CotEditor > Info > Localizations, and add your language to the table. Then, the new language you added will automatically appear in the string catalogs.
+    - CotEditor uses the String Catalog format (.xcstrings), first introduced in 2023. To add localization in each string catalog file, select your language and fill each cell of your language column in the table. Cf. [Localizing and varying text with a string catalog](https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog)
+    - You can find the string catalogs to localize under:
+        - CotEditor/Resources/Localizables/
+        - CotEditor/Storyboards/mul.lproj/
+        - Packages/EditorCore/Sources/CharacterInfo/Resources/
+        - Packages/EditorCore/Sources/FileEncoding/Resources/
+        - Packages/EditorCore/Sources/LineEnding/Resources/
+        - Packages/EditorCore/Sources/StringUtils/Resources/
+        - Packages/EditorCore/Sources/Syntax/Resources/
+    - Note that you don't need to localize the UnicodeBlock.strings file in Packages/Libraries/Sources/CharacterInfo/. It will be done by @1024jp based on the Apple's localization data.
+- Option 2: Communicate with the maintainer personally and work with a provided localization template (.xcloc file):
+    - Send a message to the maintainer (@1024jp) either by creating a new issue on GitHub or by e-mail to ask for the localization template (.xcloc file) for your language. When you receive the .xcloc file, open it in Xcode and fill each cell of your language column in the tables. When finished, send the template file back to the maintainer.
+
+#### Localization maintenance process
+
+A standard localization update proceeds as follows:
+
+1. When CotEditor has new strings to be localized, the CotEditor maintainer, @1024jp, creates a new ticket on GitHub Issues and mentions the localization maintainers in it so that they can keep all their localized strings up to date. The ticket includes all strings to be updated and their descriptions, sometimes with screenshots. e.g., [#1519](https://github.com/coteditor/CotEditor/issues/1519).
+2. The localizers either post the localized strings to the thread or make a pull request on GitHub. The maintainers should localize the updated strings within about one week (the shorter period is, of course, welcome, but not required). All the responses must be done on GitHub. Not via email.
+3. The CotEditor maintainer reviews and merges the updates provided by the localizers.
+
+Localization updates may happen once per few months, in general. If a maintainer wants to decline further ongoing maintenance for some reason, it would be kind to express their intentions to the maintainer via email or something. In that case, I will contact the community to find a new maintainer.
+
 Currently, we already have maintainers for:
 
-- Japanese
+- English (UK)
 - Simplified Chinese
 - Traditional Chinese
+- Czech
+- Dutch
+- German
 - Italian
-- French
+- Japanese
+- Korean
+- Polish
 - Portuguese
 - Turkish
-- English (UK)
+
+We are now looking for a new maintainer for:
+
+- French
+- Spanish
+
+Though CotEditor is not yet localized in any bidirectional languages, the project is prepared for it. If you’re interested in localizing CotEditor to those languages, please let us know.
 
 #### Localization for the App Store
 
-CotEditor project is also asking for localization of description on the Mac App Store. We have a separate repository for it at [coteditor/Documents-for-AppStore](https://github.com/coteditor/Documents-for-AppStore).
+The CotEditor project is also asking for localization of descriptions on the Mac App Store. We have a separate repository for it at [coteditor/Documents-for-AppStore](https://github.com/coteditor/Documents-for-AppStore).
+
+#### Hints on localization
+
+By localization, use macOS standard terms. It may be helpful to study native Apple applications like TextEdit.app or System Settings to learn how Apple localizes terms in their apps.
+
+Especially, follow the terms of the following applications:
+
+- Menu item titles in TextEdit.app
+- The Find panel in Pages.app
+- Some setting messages in ScriptEditor.app
+
+Furthermore, we recommend utilizing [Apple Localization Terms Glossary for macOS](https://applelocalization.com/macos) by Kishikawa Katsumi to find macOS-friendly expressions. This service enables us to search in the texts localized by Apple for macOS apps and frameworks.
+You also need to take care of how Apple treats punctuation characters and symbols. For example, regarding quotation marks, they normally prefer the typographer's ones.
 
 
-### Syntax Styles
+### Syntaxes
 
-#### Adding a new bundled syntax style
+#### Adding a new bundled syntax
 
-Put just your new syntax style into `/CotEditor/syntaxes/` directory. You don't need to modify `SyntaxMap.json` file. It's generated automatically on the build.
+Put just your new syntax into the `/CotEditor/syntaxes/` directory. You don't need to modify the `SyntaxMap.json` file because it will be automatically generated in the build phase.
 
-The license for the bundled syntax styles must be "Same as CotEditor".
+The license for the bundled syntaxes must be “Same as CotEditor.”
 
-If the syntax language is relatively minor, we recommend you not to bundle it to CotEditor but to distribute it as an additional syntax style in your own way, and just add a link to our [wiki page](https://github.com/coteditor/CotEditor/wiki/Additional-Syntax-Styles).
+If the syntax language is relatively minor, we recommend you not to bundle it to CotEditor but to distribute it as an additional syntax in your way, and just add a link to our [wiki page](https://github.com/coteditor/CotEditor/wiki/Additional-Syntax-Styles).
 
 
 ### Themes
 
-We don't accept pull requests adding bundled themes at the moment. You can distribute yours as an additional theme in your own way, and add a link to our [wiki page](https://github.com/coteditor/CotEditor/wiki/Additional-Themes).
+We don't accept pull requests adding bundled themes at the moment. You can distribute yours as an additional theme in your way and add a link to our [wiki page](https://github.com/coteditor/CotEditor/wiki/Additional-Themes).
 
 
-### Graphics Resources
+### Graphic Resources
 
-We don't accept pull requests for image resources. [1024jp](https://github.com/1024jp) enjoys creating and brushing up the graphics ;). Please just point out on the Issues page if a graphic resource has some kind of mistake to be fixed.
+We don't accept pull requests for image resources. @1024jp enjoys creating and brushing up on the graphics ;). If you find a graphic resource having some kind of issues to be fixed, please just point it out on the Issues page.
 
 
-Coding Style Guide
---------------------------
+
+## Coding Style Guide
 
 Please follow the style of the existing codes in CotEditor.
 
 - Respect the existing coding style.
 - Leave reasonable comments.
-- Never omit `self`.
-- Add `final` to classes by default.
-- Insert a blank line after class/function statement line.
+- Never omit `self` except in `willSet`/`didSet`.
+- Add `final` to classes and extension methods by default.
+- Insert a blank line after a class/function statement line.
     ```Swift
-    /// say moof.
+    /// Says moof.
     func moof() {
         
         print("moof")
     }
     ```
-- Don't declare `@IBOutlet` properties with `!`.
-    ```Swift
-    // OK
-    @IBOutlet private weak var button: NSButton?
-    
-    // NG
-    @IBOutlet private weak var button: NSButton!
-    ```
-- Write the `guard` statement in one-line if just return a simple value.
+- Write the `guard` statement in one line if just returning a simple value.
     ```Swift
     // prefer
-    guard let foo = foo else { return nil }
+    guard !foo.isEmpty else { return nil }
     
     // instead of
-    guard let foo = foo else {
+    guard !foo.isEmpty else {
         return nil
     }
     ```

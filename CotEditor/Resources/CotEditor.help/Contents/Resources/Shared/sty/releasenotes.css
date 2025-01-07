@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/*
+ Additional Help Style Sheet for Release Notes
+ 
+ CotEditor
+ https://coteditor.com
+ 
+ Created on 2014 by 1024jp
+ 
+ © 2014-2023 CotEditor Project
+*/
+
+
+article ul, ol {
+	padding: 0 1.5rem;
+}
+article ul li {
+	margin: 0.2rem 0;
+	list-style-type: circle;
+}
+
+footer {
+	font-size: 90%;
+	color: -apple-system-secondary-label;
+	margin-top: 2rem;
+	padding: 0 1rem;
+}
+footer::before {
+	content: '';
+	display: block;
+	width: 140px;
+	border-top: 1px solid -apple-system-separator;
+	margin: 0.6rem 0;
+}
+
+article+article {
+	margin-top: 4rem;
+	padding-top: 2rem;
+}
+
+article > header h1 {
+	font-size: 140%;
+	font-weight: normal;
+	margin: 0;
+}
+article > header p {
+	color: -apple-system-secondary-label;
+	margin: 0;
+	text-indent: 0 !important;
+}
+article h2 {
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.none {
+	color: -apple-system-secondary-label;
+}
+
+.trivial,
+.label {
+	color: hsl(198, 40%, 45%);
+	border: 1px solid;
+	border-radius: 3px;
+	padding: 0 0.2rem;
+}
+.trivial {
+	color: -apple-system-secondary-label;
+}
+p.important {
+	display: inline-block;
+	color: hsl(203, 30%, 30%);
+	background: hsl(203, 50%, 98%);
+	border: 1px solid hsl(203, 20%, 70%);
+	border-radius: 3px;
+	padding: 0.1rem 0.5rem;
+}

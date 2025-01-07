@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/*
+ Additional Help Style Sheet for Table of Contents
+ 
+ CotEditor
+ https://coteditor.com
+ 
+ © 2006-2025 CotEditor Project
+*/
+
+
+body > h1::before {
+	display: none;
+}
+a {
+	color: -apple-system-label !important;
+}
+
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+ul ul {
+	padding-left: 1.5rem;
+}
+
+summary {
+	cursor: pointer;
+}
+summary::-webkit-details-marker {
+	color: -apple-system-tertiary-label;
+}
+
+body > ul > li {
+	padding: 0.15rem 0;
+}
+
+details[open] > ul {
+	animation: 0.3s ease fadeIn;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="keywords" content="コメント, コメントアウト, コメント解除"/>
+	<link rel="stylesheet" href="../../Shared/sty/standard.css"/>
+	<script defer src="../../Shared/js/toc.js"></script>
+	
+	<title>MacのCotEditorでコメント記号を定義する</title>
+</head>
+
+<body>
+<a name="syntax_comment_settings"></a>
+
+<h1>MacのCotEditorでコメント記号を定義する</h1>
+
+<p>シンタックスのコメント記号を定義するには、シンタックスエディタの左のリストから「コメント」を選択し、右側の入力フィールドに記号を入力します。シンタックスエディタの開き方は<a href="syntax_definition.html">「シンタックスを定義する」</a>を参照してください。</p>
+
+<p>コメント設定の各項目の内容は次の通りです。ここでの設定は、コメントのカラーリングのほかに、「コメントアウト」「コメント解除」時の記号として用いられます。</p>
+
+<table>
+	<thead>
+		<tr><th>項目</th><th>説明</th></tr>
+	</thead>
+	<tbody>
+		<tr><th>インラインコメント</th><td>この記号から行末までがインラインコメントとして扱われます。</td></tr>
+		<tr><th>ブロックコメント</th><td>この開始記号と終了記号で囲まれた文字列がブロックコメントとして扱われます。開始記号と終了記号の両方を入力する必要があります。</td></tr>
+	</tbody>
+</table>
+</table>
+
+<p>通常の「コメントアウト」コマンドでは、インラインコメント記号が優先して使用されます。もしインラインコメントフィールドが空欄の場合は、ブロックコメント記号でコメントアウトされます。</p>
+
+<p>下段の表内のキーワードのカラーリング規則は<a href="syntax_highlight_settings.html">シンタックスカラーリングの設定項目</a>と同一です。この表内の設定はカラーリングにのみ用いられます。</p>
+
+
+<section id="cf">
+<h2>関連項目</h2>
+<ul>
+	<li><a href="syntax_definition.html">シンタックスを定義する</a></li>
+	<li><a href="syntax_highlight_settings.html">シンタックスカラーリングを定義する</a></li>
+	<li><a href="about_regex.html">正規表現を使う</a></li>
+</ul>
+</section>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2018-2022 1024jp
+//  © 2018-2024 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -29,20 +29,17 @@ final class UITests: XCTestCase {
     
     override func setUp() {
         
-        super.setUp()
-        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         self.continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
     }
     
     
-    func testTyping() {
+    @MainActor func testTyping() {
         
         let app = XCUIApplication()
+        app.launch()
         
-        // open new document
+        // open a new document
         let menuBarsQuery = app.menuBars
         menuBarsQuery.menuBarItems["File"].click()
         menuBarsQuery.menuItems["New Window"].click()
@@ -50,6 +47,7 @@ final class UITests: XCTestCase {
         // type some words
         let documentWindow = app.windows.firstMatch
         let textView = documentWindow.textViews.firstMatch
+        _ = textView.waitForExistence(timeout: 5)
         textView.typeText("Test.\r")
         XCTAssertEqual(textView.value as! String, "Test.\n")
         
@@ -61,7 +59,7 @@ final class UITests: XCTestCase {
             textView.typeKey(.delete, modifierFlags: [])
         }
         
-        // close window without save
+        // close window without saving
         documentWindow.buttons[XCUIIdentifierCloseWindow].click()
         if documentWindow.sheets.count > 0 {
             // it actually depends on user settings and iCloud availability if save sheet appears...
@@ -72,7 +70,7 @@ final class UITests: XCTestCase {
     }
     
     
-    func testLaunchPerformance() throws {
+    @MainActor func testLaunchPerformance() throws {
         
         // This measures how long it takes to launch your application.
         self.measure(metrics: [XCTApplicationLaunchMetric()]) {

@@ -1,19 +1,1231 @@
+# Change Log
 
-Change Log
-==========================
+5.0.8 (unreleased)
+--------------------------
 
-4.4.4 (unreleased)
+### Fixes
+
+- Fix an issue where the text fields in the syntax editor could restored the contents after the input under certain conditions.
+
+
+
+5.0.7 (690)
+--------------------------
+
+### New Features
+
+- Add `title` and `timestamp` options to the AppleScript’s `write to console` command.
+
+
+### Improvements
+
+- Provide more Unicode information about the selected character in the document inspector.
+- Prevent the console from hiding when the app goes into the background.
+- Optimize the file browser’s performance when expanding a folder containing a large number of items.
+- Improve the trimming of whitespaces in the extracted outline labels.
+- Modify the syntax highlighting rule to extract strings in the form of “begin-end” string pairs, even if one of those is escaped.
+- Adjust the editor’s initial scroll position.
+- [trivial] Update the layout of the Donation settings pane.
+- [trivial] Update the User Guide.
+
+
+### Fixes
+
+- Fix an issue that the shortcut key for cycling through windows was not functioning correctly for certain input modes.
+- Fix an issue that the end point of a selection shifted after a hanging indent on a wrapped line when the line endings are CRLF and the selection is expanded using the `Shift`-`↑` or `Shift`-`↓` shortcuts.
+- Fix an issue that the insertion point rarely jumped to the nearest outline item when the outline inspector is shown.
+
+
+
+5.0.6 (688)
+--------------------------
+
+### New Features
+
+- Display information about the selected image in the preview view for the file browser.
+- Add the “Add period with double-space” option to the Mode setting options (deselected by default).
+- Add the toolbar item for Writing Tools to the toolbar customization options (only for macOS 15.2 and later and when the Writing Tools feature is available).
+
+
+### Improvements
+
+- Allow insertion points only at the same number of wrapped lines by rectangular selection.
+- Allow selections only at the same number of wrapped lines by selecting the column up/down.
+- Update the document’s syntax based on the filename when renaming it in the file browser.
+- Always open a file as a plain-text document if its file extension or filename is determined by syntaxes.
+- Enhance the “Move Focus to Next/Previous Editor” commands to move the focus to the main editor if it’s outside the editors.
+- Update the default keyboard shortcuts for split editor-related commands.
+- Replace the “Open with External Editor” button with the “Show in Finder” button when the file selected in the file browser is alias.
+- Display the icon preview for a symbolic link selected in the file browser instead of showing a dialog.
+- Expand the draggable area in the Quick Action bar.
+- Update the JavaScript syntax to include the .mjs file extension.
+- [trivial] Enable the sudden termination feature provided by the macOS system.
+- [trivial] Make the close window in the About window the standard size.
+- [trivial] Update the User Guide.
+- [dev] Update the build environment to Xcode 16.2 (macOS 15.2 SDK).
+
+
+### Fixes
+
+- Fix an issue that the application no longer automatically terminated when the app went to the background without open documents.
+- Fix an issue that the file browser showed nothing for folders containing broken links.
+- Fix an issue that the application became unresponsive when renaming a filename in the file browser that contained newline characters.
+- Fix an issue that the printing area in the print preview was trimmed when line numbers were drawn.
+- Fix an issue that the window height unexpectedly shrunk when opening a document with the vertical layout orientation from the file browser.
+- Fix an issue in the `cot` command that the `--wait` option relaunched CotEditor when the app was quit instead of closing the document.
+- Fix an issue in the `cot` command that the `--wait` option did not wait for the window to close if the application was not yet launched when running the command.
+- Fix an issue that undetermined text conversions were ignored when submitting in some dialogs.
+- [trivial] Fix the Help button in the Donation settings pane.
+
+
+
+5.0.5 (686)
 --------------------------
 
 ### Improvements
 
+- [trivial] Omit commands in the Debug (ladybug) menu from the results of the Quick Action bar.
+
+
+### Fixes
+
+- Fix crashing when opening the Print dialog.
+
+
+
+5.0.4 (684)
+--------------------------
+
+### Improvements
+
+- Update the Swift syntax to add `@Bindable`, `@ViewLoading`, and `@WindowLoading` attributes.
+- [trivial] Rename “Move Focus” commands.
+- [trivial] Focus on the first input field when opening a dialog.
+
+
+### Fixes
+
+- Fix an issue in the file browser that the actions in the Add button were disabled when the focus is out of the browser.
+- Fix an issue that the document window position was not saved in some cases.
+- Fix insertion format editors’ behavior in the Snippet settings.
+- [trivial] Fix links in the Licenses pane in the About window.
+
+
+
+5.0.3 (682)
+--------------------------
+
+### Improvements
+
+- Expand folder items by double-clicking a folder row in the file browser.
+- Directly open .plist files from the file browser instead of previewing.
+- Improve alias file handling in the file browser.
+
+
+### Fixes
+
+- Fix an issue that the application crashes when an editor is opened while the Font window appears.
+- Fix an issue that the document window size was not properly saved.
+
+
+
+5.0.2 (680)
+--------------------------
+
+### New Features
+
+- Add Polish localization (Thanks to Rafał Kopicki!).
+
+
+### Improvements
+
+- Add .awk extension to file types treaded as CotEditor script.
+- Adjust the layout of the file preview view.
+- Update the Swift syntax to add `@Test` and `@Suite` attributes.
+
+
+### Fixes
+
+- Fix an issue that the file encoding menu disappeared from the status bar.
+- Fix an issue that document windows were not properly initialized when the windows minimized on launch.
+- Fix an issue in the file browser that duplicate folders were displayed after renaming a folder.
+- Fix an issue in the file browser that some actions for the root folder were incorrectly disabled.
+- Fix an issue in the Snippets settings pane that changes of insertion formats were not saved.
+- Fix an issue that the initial visibility state of the navigation bar was reversed.
+- [trivial] Fix an issue that the action name of the “Shift Left” action is not noted in the undo history.
+
+
+
+5.0.1 (678)
+--------------------------
+
+### Improvements
+
+- Add the “Open as Plain Text” button to the preview view for the file browser.
+- Open a file selected in the file browser as plain text when the default app set in the Finder for it is CotEditor.
+- Optimize the performance of the folder browser.
+
+
+### Fixes
+
+- Fix an issue on macOS 14 that the app crashed when opening a folder containing archive files.
+- Fix an issue that the file/folder in the file browser was not removed even when it was deleted in the actual file storage.
+- Fix an issue that the indent style detection was not applied.
+- Fix the display of the What’s New window in CJK localizations.
+- [AppStore ver.] Fix an issue that the Donation settings pane displayed an unnecessary alert when the user cancels an action.
+
+
+
+5.0.0 (674)
+--------------------------
+
+### Improvements
+
+- Enable opening the Color Code window even without any documents.
+- [rc][trivial] Adjust the window's appearance.
+- [rc][trivial] Tweak localization.
+
+
+### Fixes
+
+- Fix an issue that the English labels in the issue report template were unnecessarily localized.
+- [rc] Fix an issue that variables in the Snippet settings are not highlighted.
+- [rc][trivial] Fix a service name.
+
+
+
+5.0.0-rc (666)
+--------------------------
+
+### New Features
+
+- Support Writing Tools with Apple Intelligence.
+
+
+### Improvements
+
+- [beta] Adjust the window's appearance.
+- [beta] Show icon image for alias files selected in the file browser.
+- [beta] Add the Czech, Dutch, French, and Portuguese localizations for strings newly added in CotEditor 5.0.0.
+
+
+### Fixes
+
+- [beta] Fix an issue that UNIX scripts failed to get the document object displayed in a window with the folder browser.
+- [beta.3] Fix an issue that the editor unwontedly selects the nearest outline item when the Outline inspector is shown.
+
+
+
+5.0.0-beta.3 (664)
+--------------------------
+
+### New Features
+
+- [beta] Preview non-plain-text files.
+- [beta] Support Quick Look in the file browser.
+
+
+### Improvements
+
+- Update C++ syntax (Thanks to Léo Natan!).
+- [beta] Add the Sidebar submenu to the View menu.
+- [beta] Improve the VoiceOver support in the sidebar.
+- [beta] Enable selecting multiple items in the file browser.
+- [beta] Restore the filename to the original one when the filename edited in the file browser is invalid.
+- [beta] Avoid opening with CotEditor itself when performing the “Open with External Editor” command in the file browser.
+- [beta] Copy dropped files when pressing the Option key while dragging files to the file browser.
+- [beta] Improve the file drop feedback animation of the file browser.
+- [beta] Add the Simplified Chinese, Traditional Chinese, Italian, Korean, Spanish, and Turkish localizations for strings newly added in CotEditor 5.0.0.
+- [beta][dev] Update the build environment to Xcode 16.0 RC.
+
+
+### Fixes
+
+- [beta] Fix an issue that dropping files to the editor inserted nothing.
+- [beta.2] Address an issue on macOS 14 that folders in the file browser unwontedly closed when the user changed the folder structure.
+
+
+### Known Issues
+
+- Strings newly added are not yet localized in Czech, Dutch, French, and Portuguese.
+
+
+
+5.0.0-beta.2 (663)
+--------------------------
+
+### Improvements
+
+- [trivial] Better numbering when adding a new setting whose name is the same as an existing one.
+- [beta] Add the Duplicate and Share actions to the context menu for the sidebar.
+- [bata] Make items in the sidebar copyable.
+- [beta] Restore the expansion state of folders in the sidebar from the last session.
+- [beta] Improve hidden file handling in the sidebar.
+- [beta] Improve alias file handling in the sidebar.
+- [beta] Enable opening directories from the `cot` command.
+- [beta] Change the subtitle of document windows with the sidebar from the relative file path to the filename.
+- [beta][trivial] Adjust layout of the About and What's New panels.
+
+
+### Fixes
+
+- [beta] Fix an issue that the editor unwontedly selects the nearest outline item when the Outline inspector is shown.
+- [beta] Fix an issue that the window subtitle did not update when the document was renamed.
+- [beta] Address an issue on macOS 14 that the folder tree unwontedly closed when the user changed the folder structure.
+
+
+
+5.0.0-beta (661)
+--------------------------
+
+### New Features
+
+- Support __macOS 15 Sequoia__.
+- Folder Navigation: Open folders in CotEditor and browse their contents from the new sidebar to switch documents.
+- [AppStore ver.] Now, the user can donate to the CotEditor project via in-app purchase in the new Donate settings pane.
+- Add new “Select Enclosing Symbols” and “Split Selection by Lines” commands to the Edit > Select menu.
+- Add new “Show in Finder” command to the File menu.
+- Add new “Create Document in CotEditor” shortcut action.
+- Add the “Highlight” color to the CotEditor theme format.
+- Support the alpha channel for the current line in theme settings.
+- Add Korean localization (Thanks to Minseok Choe!).
+- Add Assembly syntax.
+- Add new “Resinifictrix (Dark)” theme.
+
+
+### Improvements
+
+- Change the system requirement to __macOS 14 Sonoma and later__.
+- Add “Select Column Up/Down“ commands to the Edit > Select menu.
+- Change the unit of character ranges handled in CotEditor Scripting for AppleScript from UTF-16 based to the Unicode grapheme cluster-based (This is to follow the specification change in AppleScript 2.0 introduced in Mac OS X 10.5).
+- Improve VoiceOver support in the Quick Action bar.
+- Update all the bundled themes to have the custom highlight color and a 70% opacity in the current line highlight.
+- Improve the performance of counting values in the editor for the status bar and the document inspector to avoid flicking of the display.
+- Set the editor's kerning to zero when a monospaced font is set via the Font panel.
+- Update the `cot` command to ignore piped text if a file to open is specified.
+- Rename the “New CotEditor Document with Selection” service with “New CotEditor Window Containing Selection.”
+- Ignore empty outline items.
+- Avoid the theme loading error when a value is missing.
+- Make more table columns sortable.
+- Update the Swift syntax.
+- Improve the User Guide contents.
+- Remove Solarized themes from the bundle.
+- [trivial] Organize the structure of the Edit menu.
+- [trivial] Suppress display of the “Extracting” message on the navigation bar in instantaneous parsing.
+- [trivial] Make names of code contributors in the About window selectable.
+- [dev] Update the build environment to Xcode 16 (Swift 6, macOS 15 SDK).
+- [dev] Migrate all unit tests to Swift Testing.
+- [dev] Migrate the navigation bar and the Snippets settings view to SwiftUI.
+- [dev] Update Yams from 5.1.2 to 5.1.3.
+
+
+### Fixes
+
+- Fix an issue that the rectangular selection cannot stop the selection just until the second line from the end.
+
+
+### TODO
+
+- Improve Assembly syntax.
+- Localize strings added.
+
+
+
+4.8.7 (657)
+--------------------------
+
+### Improvements
+
+- Change to disable the smart quotes option in the Mode settings by default.
+- Draw invisible operators (U+2061, U+2062, U+2063, and U+2064) as invisible control symbols.
+- Update the Lisp, Lua, Scheme, and Tcl syntaxes to update interpreters (thanks to Renfei!).
+- [non-AppStore ver.] Update Sparkle from 2.6.3 to 2.6.4.
+
+
+### Fixes
+
+- Fix an issue that a document kept in the Dock was not brought to the front on the reopen event even though no documents were displayed.
+- Fix an issue that the line number view went under the toolbar when the text orientation was vertical and the navigation bar was hidden.
+- Fix the view layout in the Quick Action bar.
+- Fix a potential memory leak.
+
+
+
+4.8.6 (655)
+--------------------------
+
+### Implements
+
+- Update the Markdown syntax to fix highlighting strikethrough.
+- Disable color wells in the theme editor when they use the system color.
+- Improve the User Guide contents.
+- [non-AppStore ver.] Update Sparkle from 2.6.2 to 2.6.3.
+
+
+### Fixes
+
+- Fix an issue that a saved document could not revert to the horizontal text orientation when it was saved once as a vertical text document.
+- Fix a trivial memory leak in the line ending menu (thanks to Yoshimasa Niwa).
+
+
+
+4.8.5 (653)
+--------------------------
+
+### New Features
+
+- Add jq Syntax.
+
+
+### Improvements
+
+- Improve the file path display in the document inspector.
+
+
+### Fixes
+
+- Fix an issue that the application crashed by opening the Appearance settings pane when the font the user set did not exist.
+- Fix an issue in the syntax editor that the Values pane was missing in the highlighting list in the sidebar.
+- Fix an issue in the Save dialog that the file extension disappeared when the user selected the Hide Extension option.
+- Fix an issue that the font fields in the Appearance settings pane could unnecessarily shrunk with specific fonts.
+
+
+
+4.8.4 (651)
+--------------------------
+
+### Improvements
+
+- Revert the “Do Nothing” option, which was once deprecated on CotEditor 4.6.0, for the “When nothing else is open” setting.
+- Enable toolbar/menu items for the document editor even when the focus is on the inspector.
+- Display a warning on setting renaming if the name contains “:”.
+- [dev] Update the build environment to Xcode 15.4.
+
+
+### Fixes
+
+- Fix an issue on CotEditor 4.8.3 that The Open dialog always shows up on launch despite the setting when the “Reopen windows from last session” option is disabled.
+- Fix an issue on the version browsing that document windows could become occasionally transparent.
+- Fix a typo in the Czech localization.
+
+
+
+4.8.3 (649)
+--------------------------
+
+### New Features
+
+- Add the “Show in Finder” button next to the file path in the document inspector.
+
+
+### Improvements
+
+- Display the current editor mode in the document inspector.
+- Use more appropriate system color for the selection background when dark mode or not differs between the editor and theme.
+- Improve VoiceOver support.
+- Deprecate exact recalculation of insertion points when documents are updated by external processes to improve application stability.
+- Improve stability of application launch behavior.
+- Update the Markdown syntax to distinguish strong emphases (`strong`) from normal emphases (`em`).
+- [non-AppStore ver.] Update Sparkle from 2.6.0 to 2.6.2 (security update).
+
+
+### Fixes
+
+- Fix an issue that the application could not respond to by updating a relatively large document from external processes.
+- Fix an issue that the application unwontedly copied the bundled theme setting files to the user domain.
+- Fix an issue that the Share command was not available in the theme setting list.
+- Fix the layout of the Go To Line dialog.
+- Fix an incorrect label in the theme editor in the Appearance settings.
+
+
+
+4.8.2 (647)
+--------------------------
+
+### Improvements
+
+- Disable smart dash for the General mode by default.
+- Update the JavaScript, Swift, and TOML syntaxes.
+
+
+### Fixes
+
+- Fix an issue on CotEditor 4.8.1 that opening some kinds of documents took a long time.
+- Fix an issue on CotEditor 4.8.0 that the editor displayed nothing when the mode setting is empty.
+- Fix an issue on CotEditor 4.8.0 that custom syntaxes could be ignored when it contains ill-formed file mapping definitions.
+- Fix syntax highlighting for simple words.
+
+
+
+4.8.1 (644)
+--------------------------
+
+### Improvements
+
+- Add context menus for text size change to the tables in the outline inspector and find the result view.
+- Improve the algorithm to parse syntax highlighting with simple words.
+- Improve error message when failing to load setting files.
+- Improve general stability.
+
+
+### Fixes
+
+- Address an issue on CotEditor 4.8.0 that the application could crash while updating the editor counts.
+- Fix an issue on CotEditor 4.8.0 that custom syntaxes could be empty when it contains ill-formed definitions.
+- Fix an issue on CotEditor 4.8.0 that the editor's kerning did not set to zero despite the font type being monospaced.
+- Fix an issue on CotEditor 4.8.0 that some steppers in the Settings window were placed on the opposite side.
+- Fix an issue that the application crashed when the sort key in the Sort by Pattern contains only whitespace.
+- Fix an issue that the current line highlight did not appear when the insertion point was located at the last empty line.
+- Fix an issue that the same instance highlight remains under specific conditions.
+
+
+
+4.8.0 (642)
+--------------------------
+
+### Fixes
+
+- [rc][trivial] Fix Dutch localization.
+
+
+
+4.8.0-rc (639)
+--------------------------
+
+### New Features
+
+- Add Dutch localization (thanks to Yasin Gunaydin!).
+
+
+### Improvements
+
+- Change the line count behavior to ignore the new line character at the end of the last line.
+- Improve selected line number emphasis in the line number view by the vertical text orientation.
+- Change the filter field for the outline inspector to apply the selection of the filter history immediately.
+- Remove wrapped line marks in the line number view.
+- Update the Makefile syntax to add “GNUmakefile” to the filename mapping.
+- [trivial] Remove the dialog urging to restart the application by changing the “Reopen windows from last session” option in the General settings pane.
+- [dev] Update Yams from 5.1.0 to 5.1.2.
+- [beta][trivial] Fix the text size of the syntax editor’s sidebar.
+
+
+### Fixes
+
+- Fix an issue on the filter field for the outline inspector that the filter history was initially empty.
+- [beta] Fix an issue in the syntax editor that the latter part of regular expression patterns can be invisible when they have regular expression syntax errors.
+
+
+
+4.8.0-beta.3 (637)
+--------------------------
+
+### Improvements
+
+- Renew the “About CotEditor” window.
+- [non-AppStore ver.] Update Sparkle from 2.5.2 to 2.6.0.
+- [dev] Update Yams from 5.0.6 to 5.1.0.
+- [dev] Migrate the status bar to SwiftUI.
+- [beta] Restore the last syntax editor size within a session.
+
+
+### Fixes
+
+- [beta] Fix a memory leak.
+- [beta] Fix an issue on macOS 14 that multiple cursors in editors were not drawn when the editor becomes active again.
+- [beta] Add missing localization.
+
+
+
+4.8.0-beta.2 (635)
+--------------------------
+
+### Fixes
+
+- [beta] Fix an issue that the “Suggest completions while typing” option in the Mode settings was wrongly stored.
+
+
+
+4.8.0-beta (633)
+--------------------------
+
+### New Features
+
+- Add the Mode feature that enables altering the editor’s behavior depending on the document’s syntax (Go Settings > Mode settings pane to set).
+- Add the Restore Defaults button to the File Drop settings.
+
+
+### Improvements
+
+- Improve the look and feel of the syntax editor.
+- Make the encoding priority view undoable.
+- Disable the pane transition animation in the Settings window when the user sets to reduce motion in the system Accessibility settings.
+- Deprecate “Append a space to comment delimiter” option.
+- [trivial] Enable delete selected separators in the encoding priority view with the Delete key.
+- [trivial] Avoid users using reserved syntax names.
+- [dev] Migrate the settings window and syntax editor to SwiftUI.
+- [dev] Migrate all localizable strings to String Catalog.
+- [dev] Update the build environment to Xcode 15.3 (Swift 5.10).
+
+
+### Fixes
+
+- Fix an issue that the application crashed when trying to share a custom syntax.
+- Fix an issue on macOS 14 that multiple cursors in editors remained when they are inactive.
+- Fix missing localizations.
+
+
+### Known Issues
+
+- Some new strings in the syntax editor and Mode settings are not localized yet in Czech.
+
+
+
+4.7.4 (630)
+--------------------------
+
+### New Features
+
+- Support the alpha channel in theme settings (Custom themes using alpha channel are not compatible with CotEditor prior to version 4.7.4).
+- Make sections in the document inspector collapsible.
+- Add “Hexadecimal with Alpha” format to the Color Code window.
+- Add Czech localization (Thanks to Martin Růžička!).
+
+
+### Improvements
+
+- Tweak the background color of the “Anura (Dark)” theme.
+- [dev] Migrate all the inspector panes to SwiftUI.
+
+
+### Fixes
+
+- Fix an issue on macOS 13 that the stepper in the custom tab width view worked only once.
+- Fix an issue that the character code point displayed in the document inspector could be broken when the application is localized.
+- Fix an issue that the custom font size for the outline inspector was not fully applied.
+- Fix an issue that the menu of the Syntax toolbar item could also check the previous one.
+- Fix an issue that a part of the Portuguese localization was not applied.
+- Fix Italian localization (Thanks to Roccobot and DAnn2012!).
+
+
+
+4.7.3 (627)
+--------------------------
+
+### Improvements
+
+- When the file encoding is incompatible with the document contents, display a notification instead of silently overwriting the document file with lossy data in autosaving until the user explicitly allows it.
+- Suppress displaying the dialog for saving in an incompatible encoding when the user once allowed it.
+- Update the C syntax to improve highlighting numbers.
+-  Deprecate the future to interpret `Shift_JIS` as Shift JIS or Shift JIS X0213 according to the user's priority setting when referring to encoding declarations in documents in encoding detection.
+- Improve stability.
+- [trivial] Improve alert messages for incompatible text encodings.
+
+
+### Fixes
+
+- Fix an issue that the application crashed when editing a specific pattern of color code.
+- Fix an issue that the outline inspector was empty and not updated under certain circumstances.
+- Fix an issue that the encoding reinterpretation option dialog is not displayed when the user changes a document encoding to UTF-8.
+- Fix an issue that the saved user syntax definition file was not deleted when a customized syntax was restored to the default.
+- Fix an issue that the initial window size on the first launch was too small.
+
+
+
+4.7.2 (625)
+--------------------------
+
+### Improvements
+
+- Improve stability.
+- [trivial] Deprecate the feature for theme/syntax settings to delete a setting by swiping on the setting name in Settings.
+- [non-AppStore ver.] Update Sparkle from 2.5.1 to 2.5.2.
+
+
+### Fixes
+
+- Fix an issue that the application crashed when trying to convert the encoding of an unsaved document to one incompatible with the contents.
+- Fix an issue that the application could not open a document containing a specific pattern of letters.
+- Fix an issue that the validation error message in the syntax editor did not change even when errors exist.
+- Fix an issue that the incompatible characters list did not update under the specific condition.
+- Fix a possible crash when opening a corrupt file.
+- Fix a possible crash when moving the cursor in the editor.
+
+
+
+4.7.1 (623)
+--------------------------
+
+### New Features
+
+- Add “Join Lines” command to the Text menu.
+
+
+### Fixes
+
+- Fix an issue on CotEditor 4.7.0 that documents did not update when the file was modified by a command-line process.
+- Fix an issue on CotEditor 4.7.0 that the last letter of some script names with a period could be wrongly interpreted as shortcut keys.
+- Fix an issue on CotEditor 4.7.0 that some kinds of actions, such as scripts, could not performed via the Quick Action bar.
+- Fix an issue on CotEditor 4.7.0 that the Quick Actions bar dropped to draw the Shift key in some shortcuts.
+
+
+
+4.7.0 (621)
+--------------------------
+
+### Improvements
+
+- [dev] Update the build environment to Xcode 15.1.
+- [rc.2] Remove hidden actions from Quick Action candidates.
+- [rc.2] Update the User Guide.
+
+
+
+4.7.0-rc.2 (617)
+--------------------------
+
+### New Features
+
+- Add `--syntax` (`-s`) option to the `cot` command-line tool to set desired syntax to the documents just opened.
+
+
+### Improvements
+
+- [trivial] Add shortcut symbols for special keys not on common keyboards.
+- [rc] Display the Globe symbol instead of “fn” for shortcuts in the Quick Action bar if the user keyboard is supposed to have the Globe key (thanks to Katsumi Kishikawa!).
+
+
+
+4.7.0-rc (615)
+--------------------------
+
+### Improvements
+
+- Enable the “Input Backslash” and “Input Yen Mark” menu commands in all text fields in the application.
+- [trivial] Add a stepper to the custom tab width sheet.
+- [beta] Use the same shortcut symbols as the menu display in the Quick Action bar.
+- [beta] Adjust the layout of the Quick Action bar.
+- [beta.2] Update some localized text.
+
+
+### Fixes
+
+- Fix an issue that the “unescape replacement string” option could not unescape consecutive backslashes correctly.
+- [beta] Fix an issue that some active actions were not listed in the Quick Action bar.
+- [beta] Fix an issue that keyboard shortcuts that include the Globe/fn key were not displayed in the Quick Action view.
+
+
+
+4.7.0-beta.2 (613)
+--------------------------
+
+### Improvements
+
+- Optimize the performance of the normalization of inconsistent line endings.
+- Improve stability.
+- [trivial] Increase the default font size and line height.
+- [beta] Add device name to quick actions related to Continuity Camera.
+- [beta] Localize strings added on CotEditor 4.7.0.
+
+
+### Fixes
+
+- [beta] Fix an issue that disabled menu items were listed as the quick action candidates.
+- [beta] Fix an issue that some actions were not performed properly by the Quick Action.
+
+
+
+4.7.0-beta (611)
+--------------------------
+
+### New Features
+
+- Add Quick Action bar which can launch by the Command-K keys.
+- Insert scanned text in a photo taken by iPhone or iPad.
+
+
+### Fixes
+
+- Fix an issue that the Forward Delete key could not be correctly assigned as a custom shortcut key.
+
+
+### TODO
+
+- Some text are not localized yet.
+
+
+
+4.6.5 (601)
+--------------------------
+
+### Improvements
+
+- Optimize the performance of the incompatible character scan.
+- [trivial] Add help tags to font fields in the Appearance settings pane.
+- [dev] Migrate the custom sort pattern view to SwiftUI.
+
+
+### Fixes
+
+- Fix an issue that changes in the multiple replacement definition editor did not save.
+- Fix an issue that the application could hang when opening a large document without line breaks.
+- Fix an issue that a label was not localized.
+
+
+
+4.6.4 (599)
+--------------------------
+
+### Improvements
+
+- [trivial] Dim the switcher buttons in the inspector when the window is inactive.
+- [trivial] Improve the style of the pop-up buttons in the print panel.
+- [trivial] Adjust the layout of the regular expression syntax reference.
+
+
+### Fixes
+
+- Fix an issue that the initial width of the line number view did not grow although the document is large.
+
+
+
+4.6.3 (596)
+--------------------------
+
+### Improvements
+
+- Set the text kerning in the editor to zero if the font is monospaced.
+- Improve localization.
+- [trivial] Update the label and help tag for the Line Wrapping toolbar item.
+- [non-AppStore ver.] Update Sparkle from 2.5.0 to 2.5.1.
+
+
+### Fixes
+
+- Fix an issue that the checkbox to change the background color for the current line in the Window settings did not work.
+- Fix an issue that a label was not localized.
+- [trivial] Fix unwanted line breaks in the character inspector.
+
+
+
+4.6.2 (594)
+--------------------------
+
+### Improvements
+
+- Tweak German and Japanese localization.
+
+
+### Fixes
+
+- Fix an issue that the application crashed when performing the Find All command with a specific find string.
+- Fix an issue that the find result view occasionally failed to select the match in the editor by clicking a row.
+- Fix an issue that the initial find window height was unwantedly expanded when the find result view had appeared in the last session.
+- Fix an issue that the lines copied from the find result table could be truncated.
+- Fix an issue that the Settings window disappeared when the application is inactive.
+- Fix an issue that the editor did not remember the scroll position when relaunching the application.
+- [trivial] Fix an issue that unwanted debug logs appeared in the Console.
+
+
+
+4.6.1 (591)
+--------------------------
+
+### Fixes
+
+- Fix an issue that the result of Find All did not update.
+- Fix an issue that the change of the option “When nothing else is open” in the General settings was not applied.
+- Fix a typo in German.
+- [non-AppStore ver.] Fix the layout of the General settings.
+
+
+
+4.6.0 (589)
+--------------------------
+
+### Improvements
+
+- Update the Swift syntax to add keywords for Swift 5.9.
+- [beta] Update the User Guide.
+
+
+
+4.6.0-rc (587)
+--------------------------
+
+### New Features
+
+- Copy the matched lines by selecting rows in the find result view and performing the Copy command.
+
+
+### Improvements
+
+- Improve the behavior of the find result table.
+- Deprecate the option to do nothing when no document is opened on startup.
+- Deprecate the option to swap `¥` and `\` keys.
+- Deprecate the option to comment always from the line head (This behavior is now always enabled).
+- Update the Unicode block name list for the character inspector to Unicode 15.1.0.
+- [non-AppStore ver.] Update Sparkle from 2.4.2 to 2.5.0.
+- [beta] Reorganize the Settings window.
+- [beta] Adjust the position of the history buttons in the find panel.
+- [beta] Update the User Guide.
+- [beta] Update localizations.
+- [beta][dev] Update the build environment to Xcode 15.
+
+
+### Fixes
+
+- Fix an issue that the Settings window was not listed in the Window menu.
+- [beta] Fix an issue that the visibility of the inspector was not saved.
+- [beta] Fix an issue that the font preference update was not applied immediately to opened documents.
+- [beta] Fix an issue that themes did not switch by the appearance change.
+
+
+
+4.6.0-beta.3 (585)
+--------------------------
+
+### Improvements
+
+- Remove the Print settings in the Settings window (Instead, set print settings directly in the Print dialog).
+- [beta] Adjust layout in the Settings window, print dialog, and syntax editor.
+- [beta] Update the User Guide.
+- [beta] Port changes in CotEditor 4.5.9.
+
+
+### Fixes
+
+- [beta] Fix the location to display popovers.
+
+
+
+4.6.0-beta.2 (583)
+--------------------------
+
+### Improvements
+
+- [beta] Change the font to prefer for the editor to select from the standard, monospaced, and automatic.
+
+
+
+4.6.0-beta (581)
+--------------------------
+
+### New Features
+
+- Support __macOS 14 Sonoma__.
+- Add the “Kind” option to syntax definitions to set the syntax is for “general” or “code.”
+- Add feature to set the editor font depending of the syntax kind.
+- Add the monospaced font setting to the Appearance settings pane.
+- Add feature to switch the monospaced/proportional font to the Fonts toolbar item.
+- Add option to disable the inconsistent line endings dialog entirely (not recommended).
+- Add Spanish localization (thanks to Agustin Borrego!).
+
+
+### Improvements
+
+- Change the system requirement to __macOS 13 Ventura and later__.
+- Update the behavior and look of the inspector pane.
+- Add “Use system color” option to the cursor color in the theme setting view.
+- Update the character inspector to add labels for each item and show the Unicode version.
+- Make sure to perform the automatic whitespace trimming every time before explicit saving by the user.
+- Migrate the sharing interface to the modern version.
+- Reorganize the Settings window.
+- Add a font size field to the print dialog.
+- Deprecate the print font option in the Print settings.
+- Deprecate the cursor type option.
+- Deprecate the Color Code toolbar button.
+- [trivial] Migrate the Opacity toolbar item to popover in macOS 14.
+- [trivial] Disable the zoom button in the find & replace windows.
+- [trivial] Disable the contextual menu for shortcut fields.
+- [trivial] Reduce the maximum number of editors to split into.
+- [trivial] Change the behavior of the duplication command for syntax definitions to just create a duplicated syntax instead of opening the syntax editor dialog.
+- [trivial] Improve the behavior when selecting a row in the find result table in the Find window.
+- [trivial] Rename “syntax style” with just “syntax.”
+- [dev] Update the build environment to Xcode 15 Beta 8 (Swift 5.9).
+
+
+### Fixes
+
+- Fix an issue that the Share button in the Touch Bar did not work when the document was replaced with the initial empty document.
+
+
+### Others
+
+- The toolbar customization will be reset at the first launch of CotEditor 4.6.0.
+
+
+
+4.5.9 (575)
+--------------------------
+
+### Fixes
+
+- Fix an issue that documents could not be saved with an unknown filename extension.
+- Fix an issue that the Share button in the Touch Bar did not work when the document was replaced with the initial empty document.
+
+
+
+4.5.8 (574)
+--------------------------
+
+### Improvements
+
+- Disable the beep sound at the end of successful replacement.
+
+
+### Fixes
+
+- Fix an issue that the rectangular selection could not add an insertion point at the empty last line.
+- Fix an issue that the line was not highlighted when one of multiple insertion points locates at the empty last line.
+- Fix an issue that the current line highlight did not update when some editor setting was changed.
+- Workaround an issue the toggle inspector command is disabled in macOS 14.
+
+
+
+4.5.7 (573)
+--------------------------
+
+### Improvements
+
+- Improve the stability of document saving and deletion.
+- [non-AppStore ver.] Update Sparkle from 2.4.1 to 2.4.2.
+- [dev] Update Yams from 5.0.5 to 5.0.6.
+
+
+### Fixes
+
+- Fix an issue that the Script menu in the contextual menu was unwontedly labeled “NSMenuItem.”
+
+
+
+4.5.6 (571)
+--------------------------
+
+### Improvements
+
+- Enable changing text size in Console.
+- Rename “Protocol Buffer” style with “Protocol Buffers.”
+
+
+### Fixes
+
+- Fix an issue that the script console just displayed “CotEditor.ScriptError error 0.” instead of the actual message of the standard error.
+- Fix an issue that the Scripts menu listed the files without extension as scripts.
+- Fix an issue that the size of line numbers did not update even when the editor’s font size was changed.
+
+
+
+4.5.5 (569)
+--------------------------
+
+### New Features
+
+- Add Mojo syntax style.
+
+
+### Fixes
+
+- Workaround an issue that “Keep on Top” feature blocks all windows from coming back to the foreground in the Stage Manager mode.
+- Fix an issue that invalid style names could be registered.
+- Fix an issue in the Key Binding settings that the documents currently opened were wrongly listed in the Window menu.
+- Fix an issue that the context menu in the editor didn't contain the script menu when the root scripts folder has only folders.
+- Fix missing localization.
+
+
+
+4.5.4 (566)
+--------------------------
+
+### Improvements
+
+- Add “Keep on Top” toolbar item.
+- Restore the “Keep on Top” state of windows from the last session.
+
+
+### Fixes
+
+- Fix an issue in CotEditor 4.5.3 that some menu command shortcuts could not be customized.
+
+
+
+4.5.3 (564)
+--------------------------
+
+### New Features
+
+- Add “Keep on Top” command in the Window menu.
+
+
+### Improvements
+
+- Remove the Open command in the Dock menu.
+- Enable the ToC button in Help Viewer.
+- Update Swift syntax style to fix highlighting with `/` characters.
+- [non-AppStore ver.] Update Sparkle from 2.4.0 to 2.4.1.
+
+
+### Fixes
+
+- Fix an issue that the application crashed by typing the ¨ key with a Norwegian keyboard.
+- Fix an issue that menu command shortcuts could be unwontedly localized according to the user's keyboard layout.
+- Fix an issue that the editor font did not apply to documents created via Services.
+- Fix an issue that the application could crash by opening the About window in some specific conditions.
+
+
+
+4.5.2 (562)
+--------------------------
+
+### New Features
+
+- Add BBCode syntax style.
+
+
+### Improvements
+
+- Update Swift syntax style to add some keywords.
+- [non-AppStore ver.] Update Sparkle from 2.3.2 to 2.4.0.
+- [dev] Update the build environment to Xcode 14.3 (Swift 5.8).
+
+
+### Fixes
+
+- Workaround an issue on macOS 12 that the application uses 100% CPU after searching files in the open dialog.
+- Fix typos in German and Italian localizations (thanks to Jan Richter and DAnn2012!).
+
+
+
+4.5.1 (560)
+--------------------------
+
+### Improvements
+
+- Scroll the editor to make the remaining cursor visible when canceling the multi-cursor editing mode.
+
+
+### Fixes
+
+- Fix the application could crash when the Invisibles toolbar item is displayed.
+- [trivial] Fix the shortcut key display for the mic key in the Key Bindings pane.
+
+
+
+4.5.0 (558)
+--------------------------
+
+- No change.
+
+
+
+4.5.0-rc (557)
+--------------------------
+
+### Improvements
+
+- Change counting characters/lines/words to count all elements in multiple selections.
+- Change the threshold to trigger the automatic completion to 3 letters to optimize calculation time by large documents.
+- Allow `_` as a character for completion candidates.
+- Synchronize the visibility of all navigation/status bars in the application.
+
+
+### Fixes
+
+- Fix an issue that the application did not terminate when no documents exist and the application goes background.
+- Fix an issue on macOS 12 that the buttons at the bottom were not aligned.
+
+
+
+4.5.0-beta.2 (555)
+--------------------------
+
+### New Features
+
+- Add a new scope “syntax style” to the snippet feature to perform snippets only in a specific syntax style.
+- Add a new variable “selection” to the snippet feature to place the currently selected text to the inserted text.
+
+
+### Fixes
+
+- Fix an issue in the search window that an error dialog for invalid regular expression appeared even on incremental search.
+- [beta] Fix an issue that the snippet setting was occasionally not saved.
+
+
+
+4.5.0-beta (553)
+--------------------------
+
+### New Features
+
+- Renew the snippets feature to enable naming it, changing the order, and performing from the menu.
+- Add the Insert Snippet submenu to the Text menu.
+- Enable the character inspector to inspect more information about each Unicode scalar that makes up a character.
+
+
+### Improvements
+
+- Reconstruct the Snippets (ex. File Drop) and Key Bindings panes in the Settings window.
+- Allow single function keystroke for a keyboard shortcut.
+- Optimize the performance of text editing while URL linking is enabled.
+- Update item order of the Edit menu.
+- Make filter highlights of the outline list more legible in the Dark Mode.
+- Update Swift syntax style to add keywords for Swift 5.8.
+- Deprecate the Insert Encoding Name command (use AppleScript instead).
+- Update the User Guide.
+- [non-AppStore ver.] Update Sparkle from 2.3.1 to 2.3.2.
+- [dev] Update Yams from 5.0.4 to 5.0.5.
+
+
+### Fixes
+
+- Fix an issue that the Replace button in the Find window did not select the next match.
+- Fix an issue that all URL links were removed when an external process updated the document.
+- Fix the redo action label for the line endings conversion and file encoding change.
+
+
+
+4.4.5 (550)
+--------------------------
+
+### New Features
+
+- Add “last modified date” option to the print header/footer options.
+- Add “Ignore” option to the inconsistent line endings alert.
+
+
+### Improvements
+
+- [dev] Update Yams from 5.0.3 to 5.0.4.
+
+
+### Fixes
+
+- Fix an issue that the print Header/Footer alignment options did not match the selected settings.
+- Fix an issue that some shortcut keys could be used for menu key binding customization without warning even when they are used for existing commands.
+- Fix missing localization in the Find window.
+- Remove outdated descriptions in the Key Bindings pane.
+
+
+
+4.4.4 (548)
+--------------------------
+
+### Improvements
+
+- Optimize the performance of the Find/Replace All command.
+- Add visual feedback that the search reached the end.
+- Enable walking through all the controls in the Find window by the Tab key.
+- Update C++ syntax style to fix attributes highlight (thanks to Luke McKenzie!).
+- Deprecate the Find Selected Text command.
+- [trivial] Reset custom shortcuts for the find commands.
 - [non-AppStore ver.] Update Sparkle from 2.3.0 to 2.3.1.
 
 
 ### Fixes
 
+- Fix an issue that found string in the editor was occasionally not focused.
 - Fix an issue that multiple replacements were not performed if the document is empty.
 - Fix an issue that the Find window expanded unnecessarily in some specific conditions.
+- Fix a label in the Advanced Find Options view.
 
 
 
@@ -57,7 +1269,7 @@ Change Log
 ### Fixes
 
 - Fix an issue on macOS 13 that the table in the Multiple Replace dialog was corrupted when switching the set.
-- Fix an issue that a file extension was appended to the file by saving even when the syntax style has no extensions.
+- Fix an issue that a filename extension was appended to the file by saving even when the syntax style has no extensions.
 - Fix an issue that the line number view did occasionally not widen even when the number exceeds 4 digits.
 - Fix an issue that an unwanted extra blank document was created when creating a new document with the selection by Services under specific conditions.
 - Fix an issue that the scripting result could be corrupted under some specific conditions.
@@ -221,7 +1433,7 @@ Change Log
 ### Fixes
 
 - Fix an issue that memory could leak when the opacity toolbar item is used.
-- Fix an issue that the option “Give execute permission” in the save dialog was applied to the document even when the save operation was cancelled.
+- Fix an issue that the option “Give execute permission” in the save dialog was applied to the document even when the save operation was canceled.
 - Address an issue since macOS 12.4 that the buttons in the save dialog became occasionally unresponsive when the application is running in some specific Japanese environment.
 - Fix an issue that memory could leak when the opacity toolbar item is used.
 - Fix an issue that the column of the outline pane was narrower than the list width.
@@ -377,7 +1589,7 @@ Change Log
 - Update Markdown and Textile syntax styles to fix highlighting.
 - Improve the indent style detection.
 - Improve traditional Chinese localization (thanks to Shiki Suen!).
-- Update the help contents.
+- Update the User Guide.
 - [dev] Update the build environment to Xcode 13.4 (macOS 12.3 SDK).
 - [trivial] Change UTI for TeX document to `org.tug.tex`.
 
@@ -420,7 +1632,7 @@ Change Log
 
 ### Improvements
 
-- [rc] Update the help contents.
+- [rc] Update the User Guide.
 - [rc] Update localized strings.
 
 
@@ -457,14 +1669,14 @@ Change Log
 - [dev] Update Yams from 5.0.0 to 5.0.1.
 - [beta] Add the panel notifying about the line ending migration.
 - [beta] Select the character in the editor also when an item already selected in the Warnings pane is clicked.
-- [beta][trivial] Rename “Unicode Next Line” to “Next Line”.
+- [beta][trivial] Rename “Unicode Next Line” to “Next Line.”
 
 
 ### Fixes
 
 - [beta] Fix an issue that the Line Endings submenu in the Format menu did not display minor line ending types even with the Option key.
 - [beta] Fix an issue the item fields in the Outline inspector did not resize properly.
-- [beta] Fix a possible issue that the initial massage in the incompatible character list did not reflect the actual result.
+- [beta] Fix a possible issue that the initial message in the incompatible character list did not reflect the actual result.
 
 
 
@@ -473,7 +1685,7 @@ Change Log
 
 ### Improvements
 
-- [beta] Update the help contents.
+- [beta] Update the User Guide.
 - [beta][trivial] Optimize the performance of the Warnings pane.
 
 
@@ -491,8 +1703,8 @@ Change Log
 
 - Ability to handle documents holding multiple types of line endings.
 - Alert inconsistent line endings in the document when opening or reloading.
-- List up the inconsistent line endings in the Warnings pane in the inspector.
-- Minor line endings, namely NEL (New Line), LS (Line Separator), and PS (Paragraph Separator), are added to the line endings options (These items are visible only either when pressing the Option key or when the document's line ending is one of these).
+- List the inconsistent line endings in the Warnings pane in the inspector.
+- Minor line endings, namely NEL (New Line), LS (Line Separator), and PS (Paragraph Separator) are added to the line endings options (These items are visible only either when pressing the Option key or when the document's line ending is one of these).
 - Add the hidden Paste Exactly command (Command-Option-V) that pastes text in the clipboard without any modification, such as adjusting line endings to the document setting.
 - Add an option Selection to the Pages section in the Print dialog to print only the selected text in the document.
 - Add history to the Unicode code point input.
@@ -518,8 +1730,8 @@ Change Log
 - Deprecate the feature to replace `$LN` in the outline menu template with the line number of the occurrence.
 - Remove original document icons for CoffeeScript and Tcl.
 - Revise text for more Mac-like expression.
-- Update the help contents.
-- [trivial] Accept script files for the Script menu with an uppercased file extension.
+- Update the User Guide.
+- [trivial] Accept script files for the Script menu with an uppercased filename extension.
 - [trivial] Replace `\n` with `\R` for the newline metacharacter in the Basic Regular Expression Syntax reference.
 - [trivial] Tweak Anura theme.
 
@@ -552,13 +1764,13 @@ Change Log
 
 - Update Swift syntax style to add keywords added in Swift 5.6.
 - Update YAML syntax style for better coloring.
-- [trivial] Improve progress message for the Find/Replace All.
+- [trivial] Improve the progress message for the Find/Replace All.
 - [dev] Update the build environment to Xcode 13.3 (Swift 5.6).
 
 
 ### Fixes
 
-- Fix an issue that the file extension proposed in the save dialog for untitled document did not reflect the latest syntax style.
+- Fix an issue that the filename extension proposed in the save dialog for untitled document did not reflect the latest syntax style.
 - Fix an issue that the application could not open Haskell files.
 - Fix a potential crash when opening files via Services.
 
@@ -649,21 +1861,21 @@ Change Log
 - Allow the menu key bindings to assign a shortcut without the Command key.
 - Display code points instead of left blank in the incompatible character table for control characters.
 - Update Swift syntax style to add keywords added in Swift 5.5.
-- Update C++ syntax style to add more file extensions.
+- Update C++ syntax style to add more filename extensions.
 - Update Markdown syntax style for faster syntax parsing.
 - Change the behavior to include the last empty line in the calculation when specifying lines with a negative value in the Go to Line command or via AppleScript.
 - Improve the character info section in the document inspector to display the list of code points for the selected character instead of displaying only when a single Unicode character is selected.
 - Update the Unicode block name list for the character inspector from Unicode 13.0.0 to Unicode 14.0.0.
-- Make sure the application relaunches even other tasks interrupt before termination.
+- Make sure the application relaunches even if other tasks interrupt before termination.
 - Improve some toolbar items to make their state distinguish even collapsed.
 - Display the command name in the error message when the input shortcut for key bindings is already taken by another command.
 - Improve VoiceOver accessibility.
 - Update the AppleScript guide in the help.
 - Improve the animation by drag & drop in tables.
-- Optimize several document parse.
+- Optimize several document parses.
 - [trivial] Adjust the margin of the editor area.
-- [trivial] Hide the file extension of setting files by export by default.
-- [trivial] Finish key binding input in Key Bindings pane when another window becomes frontmost.
+- [trivial] Hide the filename extension of setting files by export by default.
+- [trivial] Finish key binding input in the Key Bindings pane when another window becomes frontmost.
 - [trivial] Update some symbols for shortcut keys in the key binding settings.
 - [dev] Update the build environment to Xcode 13.2 (Swift 5.5).
 - [dev] Remove xcworkspace.
@@ -679,7 +1891,7 @@ Change Log
 - Fix an issue that the slider in the editor opacity toolbar item did not work when collapsed.
 - Fix an issue that the editor's opacity change did not apply immediately.
 - Fix an issue that some uncustomizable menu commands were provided in the Key Bindings preference pane.
-- Fix an issue in the snippet key bindings that shortcuts with only Shift key for modifier keys were accepted though does not work correctly.
+- Fix an issue in the snippet key bindings that shortcuts with only the Shift key for modifier keys were accepted though does not work correctly.
 - Fix an issue that some help buttons did not work (thanks to Alex Newson!).
 - Fix and minor update on localized strings.
 - Fix `cot` command to work also with Python 3.
@@ -693,7 +1905,7 @@ Change Log
 ### Fixes
 
 - Fix an issue that File Drop settings were not saved if both the extensions and syntax styles are for “all.”
-- Fix an issue that shortcuts for snippet did not accept Shift with a non-letter character, such as Shift + Return.
+- Fix an issue that shortcuts for snippets did not accept the Shift key with a non-letter character, such as Shift + Return.
 - Fix an issue that the rainbow cursor appeared when the document has a large number of incompatible characters.
 - Fix an issue that the rainbow cursor appeared when expanding the selection by “⌥⇧←” shortcut and invisible characters are contained in the new selection.
 - Fix an issue that the writing direction could be changed to right to left although when the text orientation is vertical.
@@ -725,7 +1937,7 @@ Change Log
 ### Improvements
 
 - Highlight named capture where highlight regular expression patterns such as in the find panel.
-- Add “.erb” extension to Ruby syntax style.
+- Add .erb extension to Ruby syntax style.
 - Accept IANA charset names as the encoding name in `convert` and `reinterpret` commands for AppleScript.
 - Improve error messages for OSA Scripting.
 - [trivial] Tweak the help layout.
@@ -753,7 +1965,7 @@ Change Log
 - Improve the syntax highlighting algorithm around comments and quoted text.
 - Revert JavaScript syntax style update in CotEditor 4.0.5 that modifies regular expression highlight.
 - Update the bundled cot command to enable reading large piped text entirely.
-- Update help contents.
+- Update the User Guide.
 - [trivial] Sort themes alphabetically regardless of whether they are bundled or not.
 - [trivial] Make the timing to trim trailing spaces shorter.
 - [trivial] Tweak Japanese localization in Preferences.
@@ -783,7 +1995,7 @@ Change Log
 ### Fixes
 
 - Fix an issue that the application did not terminate when all windows are closed.
-- Fix an issue that annoying dialog that alerts saving was failed could be shown while typing when autosaving is disabled.
+- Fix an issue that an annoying dialog that alerts saving was failed could be shown while typing when autosaving is disabled.
 - Address an issue that typing in a large document could be slow when the Autosave feature is disabled.
 
 
@@ -803,10 +2015,10 @@ Change Log
 
 - Fix an issue that the application did not terminate when all windows are closed.
 - Fix an issue in the script menu that a script bundle (.scptd) was handled not as a script but as a folder.
-- Fix an issue in the snippet key bindings that shortcuts with only Shift key for modifier keys were accepted though does not work correctly.
+- Fix an issue in the snippet key bindings that shortcuts with only the Shift key for modifier keys were accepted though does not work correctly.
 - Fix an issue that the application rarely showed the open dialog on launch even when the user setting for the startup behavior is not “show open dialog.”
 - Fix literal number highlight with Ruby syntax style.
-- Address an issue that annoying dialog that alerts saving was failed could be shown while typing when autosaving is disabled.
+- Address an issue that an annoying dialog that alerts saving was failed could be shown while typing when autosaving is disabled.
 
 
 
@@ -816,7 +2028,7 @@ Change Log
 ### Improvements
 
 - Keep detached character inspectors even after the parent document is closed.
-- Detect syntax style from the file extension also case-insensitively.
+- Detect syntax style from the filename extension also case-insensitively.
 - Update R syntax style.
 - [non-AppStore ver.] Reduce the application size.
 - [dev] Update Yams from 4.0.4 to 4.0.6.
@@ -840,7 +2052,7 @@ Change Log
 ### Fixes
 
 - Fix French localization.
-- [trivial] Fix script icon in Help contents in Dark mode.
+- [trivial] Fix the script icon in the User Guide in Dark mode.
 
 
 
@@ -856,7 +2068,7 @@ Change Log
 
 ### Fixes
 
-- Fix an issue on the Big Sur that the navigation bar in the document window disappeared.
+- Fix an issue on Big Sur that the navigation bar in the document window disappeared.
 
 
 
@@ -948,8 +2160,8 @@ Change Log
 
 - Checkmarks are not applied to the corresponding items in the menus for the collapsed toolbar items.
 - [Big Sur] Syntax highlight for the regular expression disappears when the text field becomes in editing (FB8719584).
-- [Big Sur] Screenshots in the help contents are not updated yet.
-- [Big Sur] Document icons are not updated yet for Big Sur style.
+- [Big Sur] Screenshots in the User Guide are not updated yet.
+- [Big Sur] Document icons are not updated yet for the Big Sur style.
 
 
 
@@ -958,16 +2170,16 @@ Change Log
 
 ### Improvements
 
-- Round the corners of current line highlight.
+- Round the corners of current line highlights.
 - [beta][Big Sur] Match the inspector background to desktop color.
-- [beta][trivial] Update titlebar color.
+- [beta][trivial] Update title bar color.
 
 
 ### Fixes
 
 - [beta] Fix an issue in the navigation bar that the split editor button did not update when changing the split orientation.
-- [beta] Fix an issue in the appearance pane and the multiple replacement panel that the newly added setting was not selected.
-- [beta] Address an issue that the status bar rarely compressed vertically.
+- [beta] Fix an issue in the Appearance pane and the multiple replacement panel that the newly added setting was not selected.
+- [beta] Address an issue that the status bar was rarely compressed vertically.
 - [beta] Workaround an issue that the initial text color of the pop-up menus in the status bar dimmed.
 
 
@@ -999,10 +2211,10 @@ Change Log
 - Live update selection counts while moving the selection.
 - Scroll editor by swiping the line number area.
 - Previously, CotEditor scripts written in Unix scripts, such as Ruby or Python, were decoded using the user-preferred file-encoding set in the Format preferences pane for normal documents, now they are always interpreted as UTF-8.
-- Avoid showing the "edited" indicator in the close button of document windows when the document content is empty and therefore can close the window without the confirmation dialog.
+- Avoid showing the "edited" indicator in the close button of document windows when the document contents are empty and therefore can close the window without the confirmation dialog.
 - Remove the toolbar button to toggle page guide visibility.
 - Remove feature to import legacy syntax style definition files of which format was used in CotEditor 1.x.
-- [trivial] Improve tooltips of toolbar icons to reflect the current document state.
+- [trivial] Improve help tags of toolbar icons to reflect the current document state.
 - [trivial] Optimize the line number calculation in vertical text orientation.
 - [trivial] Always enable non-contiguous layout by the normal horizontal text orientation.
 - [dev] Update the build environment to Xcode 12.2 (Swift 5.3, macOS 11 SDK).
@@ -1018,8 +2230,8 @@ Change Log
 
 ### Known Issues
 
-- Some of help contents are not updated yet.
-- Document icons are not updated yet for Big Sur style.
+- Some of the contents in the User Guide are not updated yet.
+- Document icons are not updated yet for the Big Sur style.
 
 
 
@@ -1077,7 +2289,7 @@ Change Log
 
 ### Fixes
 
-- Fix an issue that an unremovable empty dialog could show up when performing Replace All under specific conditions.
+- Fix an issue that an unremovable empty dialog could appear when performing Replace All under specific conditions.
 - Fix an issue in the find/replacement progress report that the progress message was not updated when nothing found.
 - Fix an issue in the outline menu in the navigation bar that the last separator did not appear.
 - Fix an issue in toolbar that menu style items were vertically squashed in the toolbar customization dialog.
@@ -1106,7 +2318,7 @@ Change Log
 
 ### Improvements
 
-- Suppress showing a dialog when opening a file with the “.ts” file extension as it may not be a MPEG-2 Transport Stream file but a TypeScript file.
+- Suppress showing a dialog when opening a file with the .ts file extension as it may not be a MPEG-2 Transport Stream file but a TypeScript file.
 - Improve the style and behavior of the add/remove rule button in the multiple replacement window.
 - [trivial] Delete multiple replacement rules by dropping items into the Trash.
 
@@ -1121,7 +2333,7 @@ Change Log
 - Fix an issue in theme editing that the values in the theme editor were not updated when the bundled theme currently edited is restored.
 - Fix an issue in the dialog for the pattern line sort that the sample line could indicate a wrong sort key scope when the sort key type is “column.”
 - Fix the feedback animation when dragging and dropping items in a table.
-- [trivial] Fix an issue that the menus in toolbar expended unwantedly after customizing toolbar.
+- [trivial] Fix an issue that the menus in toolbar expended unwontedly after customizing toolbar.
 - [trivial] Fix some layout corruptions under macOS 11 Big Sur (beta).
 
 
@@ -1152,8 +2364,8 @@ Change Log
 
 ### Improvements
 
-- Remove the default value of the snippet keybindings, that inserts `<br />` with `⇧↩`.
-- [trivial] Remove the snippet keybindings setting migration from CotEdtiror 2.x format and earlier.
+- Remove the default value of the snippet key bindings, that inserts `<br />` with `⇧↩`.
+- [trivial] Remove the snippet key bindings setting migration from CotEditor 2.x format and earlier.
 - [beta] Add missing localizations for French.
 
 
@@ -1208,7 +2420,7 @@ Change Log
 - Improve the encodings list edit view.
 - Adjust the width of toolbar items.
 - Remove “vertical orientation” from the selections of the Writing Direction toolbar button.
-- Update help content.
+- Update help contents.
 - [trivial] Rename “Auto-Detect,” the option detecting the file encoding automatically, to “Automatic.”
 - [trivial] Update some labels in the Format pane.
 - [beta] Add menu item, toolbar item, and Touch Bar item to toggle visibility of indent guides in the current document.
@@ -1304,7 +2516,7 @@ Change Log
 ### Improvements
 
 - Include the last line break to line count.
-- Update “Kotlin”, “JSON”, and “SVG” syntax styles.
+- Update Kotlin, JSON, and SVG syntax styles.
 
 
 ### Fixes
@@ -1349,9 +2561,9 @@ Change Log
 - Make space to draw the invisible symbol for ZERO WIDTH SPACE (U+200B) when the “other invisible characters” option is enabled.
 - Enable “Move Line Down” and “Move Line Up” commands swap lines with the last empty line.
 - Improve general performance while typing.
-- Update “CSS” syntax style.
+- Update CSS syntax style.
 - [trivial] Keep the visible area after resizing a document window even if overscrolling is enabled.
-- [trivial] Adjust the theme “Note”.
+- [trivial] Adjust the theme “Note.”
 
 
 ### Fixes
@@ -1429,7 +2641,7 @@ Change Log
 ### Improvements
 
 - Revert shortcut `⌘/` to comment-out toggle.
-- Add “.zprofile” and “.zlogin” extensions to “Shell Script” syntax style.
+- Add .zprofile and .zlogin extensions to Shell Script syntax style.
 
 
 
@@ -1465,7 +2677,7 @@ Change Log
 - Raise an alert when performing find (or replacement) with “in selection” option while no text is selected.
 - Change the Console font to monospaced.
 - Dim the Console content area during the incremental search.
-- Accept importing custom syntax styles with “.yml” extension.
+- Accept importing custom syntax styles with .yml extension.
 - Avoid re-parsing syntax highlight when the appearance is switched.
 - Support Dark Mode in the help.
 - [non-AppStore ver.] Update Sparkle framework.
@@ -1505,7 +2717,7 @@ Change Log
 - Restore all of the last cursors on the window restoration.
 - Highlight matching braces for all cursors.
 - Adjust the printing area by the vertical text orientation.
-- Update JSON syntax style by adding “.resolved” extension.
+- Update JSON syntax style by adding .resolved extension.
 
 
 ### Fixes
@@ -1514,7 +2726,7 @@ Change Log
 - Fix an issue on macOS 10.13-14 where spaces at the end of the document could not be deleted by delete key.
 - Fix an issue on macOS 10.13-14 where performing return key just after an open bracket at the end of the document made the application freeze.
 - Fix an issue where the editor theme for newly opened windows did not match to the window appearance when the system appearance was changed after the application launch.
-- Fix an issue where a highlighting indicator showed up at a wrong location when pressing the enter key just before a closing bracket.
+- Fix an issue where a highlighting indicator showed up at a wrong location when pressing the Enter key just before a closing bracket.
 - [trivial] Fix French localization.
 
 
@@ -1560,7 +2772,7 @@ no change.
 ### New Features
 
 - Add “Appearance” option in the Appearance preferences pane to change document window appearance whatever the system appearance is (only on macOS 10.14 and later).
-- Add a new theme “Anura (Dark)”.
+- Add a new theme “Anura (Dark).”
 
 
 ### Improvements
@@ -1573,7 +2785,7 @@ no change.
 - Adjust text baseline of input fields in the find panel when a fallback font is used.
 - Always enable Left to Right button in Writing Direction toolbar button.
 - Change the way to count words for stability.
-- Update “TOML” syntax style to support array of tables (Thanks to Takuto ASAKURA!)
+- Update TOML syntax style to support array of tables (Thanks to Takuto ASAKURA!)
 - [dev] Update build environment to Xcode 11.1 (Swift 5.1, macOS 10.15 SDK).
 
 
@@ -1591,7 +2803,7 @@ no change.
 
 ### Improvements
 
-- Optimize performance of text layout calcuration.
+- Optimize performance of text layout calculation.
 
 
 ### Fixes
@@ -1616,7 +2828,7 @@ no change.
 
 ### Fixes
 
-- Fix an issue where find result was unwantedly collapsed when resizing the find panel.
+- Fix an issue where find result was unwontedly collapsed when resizing the find panel.
 - Fix an issue where hanging indent was not applied to the printed document.
 - Workaround the issue where an editor resizing required a too long time.
 - Fix a possible crash in the Appearance preferences pane.
@@ -1629,7 +2841,7 @@ no change.
 
 ### New Features
 
-- Add new variable “file content” to File Drop feature to insert the file content when the dropped file is a text file.
+- Add new variable “file content” to File Drop feature to insert the file contents when the dropped file is a text file.
 
 
 ### Improvements
@@ -1718,7 +2930,7 @@ no change.
 ### Improvements
 
 - Make the i-beam cursor legible in vertical text orientation and dark background theme.
-- Use monospace numbers for line numbers in Find All result table.
+- Use monospaced numbers for line numbers in Find All result table.
 - Optimize performance highlighting found matches.
 - [dev] Update build environment to Xcode 10.2 (Swift 5).
 - [dev] Update Differ framework to 1.4.0.
@@ -1815,7 +3027,7 @@ no change.
 
 - [beta] Disable “Change Opacity” action while fullscreen mode.
 - [beta] Move the position of the opacity control popover.
-- [beta] Update help contents.
+- [beta] Update the User Guide.
 - [trivial] Improve toolbar color.
 - [dev] Update Differ framework to 1.3.0.
 
@@ -1838,7 +3050,7 @@ no change.
 ### Improvements
 
 - Remember the last used custom characters for “Surround Selection With” > “Custom” action.
-- [beta] Keep insertion points afeter cut.
+- [beta] Keep insertion points after cut.
 - [beta] Localize newly added strings.
 
 
@@ -1910,7 +3122,7 @@ no change.
 
 ### Improvements
 
-- [beta] Exit muti-cursor mode by using `esc` key.
+- [beta] Exit multi-cursor mode by using `esc` key.
 - [beta] Add `^⇧↑` and `^⇧↓` shortcuts to add an insertion point above/below.
 
 
@@ -1936,7 +3148,7 @@ no change.
 
 ### Improvements
 
-- Update syntax style for “SVG”.
+- Update syntax style for SVG.
 - Update `cot` command-line tool:
     - Fix an issue where stack trace displayed when using `--wait` option with some clients other than Terminal.app.
     - Fix an issue where `--column` could misplace the insertion point when a negative number was given.
@@ -1971,7 +3183,7 @@ no change.
 
 ### New Features
 
-- Add syntax style for “Kotlin”.
+- Add syntax style for Kotlin.
 
 
 ### Improvements
@@ -1981,7 +3193,7 @@ no change.
 - Make editing multiple replacement definitions undoable.
 - Syntax highlight regular expression patterns in the syntax style editor, multiple replacement definitions, and the custom sort dialog.
 - Move focus to the editor when lines are selected by clicking line numbers.
-- Apply update of “Line numbers”, “Page guide” and “invisible characters” visibility options in the preferences immediately to opened documents.
+- Apply update of “Line numbers,” “Page guide,” and “invisible characters” visibility options in the preferences immediately to opened documents.
 - Suppress the dialog asking if you want to keep the document when an unsaved empty document is about to close, and silently discard the auto-saved backup file.
 - Change the label of the option “Count each line ending as one character” in General pane to “Ignore line endings when counting characters” (the value reversed).
 - Enable the “Share” button in toolbar also in the Text Only mode.
@@ -2006,7 +3218,7 @@ no change.
 - Fix an issue where line number views did not update when the editor is scrolled via script.
 - Fix the preferences pane switching animation under macOS 10.13 and earlier.
 - [trivial] Fix a potential issue where last empty line number could be drawn at the first line position under specific conditions.
-- [trivial] Fix an issue where editor occasionally scrolled unintendedly when an arrow key is pressed.
+- [trivial] Fix an issue where editor occasionally scrolled unintentionally when an arrow key is pressed.
 
 
 
@@ -2032,7 +3244,7 @@ no change.
 
 ### New Features
 
-- Add syntax style for “TOML”.
+- Add syntax style for TOML.
 
 
 ### Improvements
@@ -2049,7 +3261,7 @@ no change.
 ### Fixes
 
 - Fix the cursor location by changing the selection with shortcut `⌘←`.
-- Fix an issue where the rainbow cursor could appear when cancelling syntax highlight with a large document multiple times.
+- Fix an issue where the rainbow cursor could appear when canceling syntax highlight with a large document multiple times.
 
 
 
@@ -2060,7 +3272,7 @@ no change.
 
 - Change not to highlight occurrences of the selection when there are more than 100.
 - Update validation pane in the syntax style editor:
-    - Now, validation is performed automatically when the pane switched to “Validation”.
+    - Now, validation is performed automatically when the pane switched to “Validation.”
 - [trivial] Remove “Restore Defaults” button in the syntax style editor if the style has no defaults.
 - [non-AppStore ver.] Update Sparkle framework.
 
@@ -2094,7 +3306,7 @@ no change.
 
 ### New Features
 
-- New option for cursor style (Customize the behavior in Appearances preference pane).
+- New option for cursor style (Customize the behavior in Appearance preference pane).
 
 
 ### Improvements
@@ -2152,7 +3364,7 @@ no change.
 ### Fixes
 
 - Fix an issue where selected inspector pane was not stored.
-- Fix an issue where initial display area shifted unwantedly if line numbers are displayed lines are unwrapped.
+- Fix an issue where initial display area shifted unwontedly if line numbers are displayed lines are unwrapped.
 - Fix an issue where script name was not displayed in Console.
 - Fix an issue where the writing direction (RtL) was not delivered to printing.
 - Fix layout in some localized environment.
@@ -2171,7 +3383,7 @@ no change.
 
 - Avoid selecting deleted spaces when undoing a soft tab deletion.
 - Make the credits view in About panel dark in the Dark Mode.
-- Add “.cxx” extension to “C++” syntax style.
+- Add .cxx extension to C++ syntax style.
 - Adjust the width of line number views.
 - [non-AppStore ver.] Update Sparkle framework.
 
@@ -2179,7 +3391,7 @@ no change.
 ### Fixes
 
 - Fix an issue where the cursor position did not restore correctly after repeatedly undoing & redoing bracket insertion with the “Automatically insert closing brackets and quotes” option enabled.
-- Fix an issue where editor scrolled unwantedly after pasting something at a latter half part of the document with “Link URLs in document” option enabled.
+- Fix an issue where editor scrolled unwontedly after pasting something at a latter half part of the document with “Link URLs in document” option enabled.
 - Fix an issue where URL link ranges expanded even if non-URL-related lines is pasted just after an URL.
 - Fix an issue where the application could rarely crash under specific conditions.
 
@@ -2215,7 +3427,7 @@ no change.
 
 ### Fixes
 
-- Fix an issue where theme was not applied to document print when the print theme setting is “Same as Document's Setting”.
+- Fix an issue where theme was not applied to document print when the print theme setting is “Same as Document's Setting.”
 - Fix an issue where “Copy as Rich Text” command lost the style information when paste to some specific applications, such as Pages.
 - [beta] Fix an issue where theme color was not applied to document print.
 - [beta] Fix an issue where the editable area in editors are occasionally set wrong after zooming on macOS 10.14 Mojave.
@@ -2247,7 +3459,7 @@ no change.
 ### Improvements
 
 - Abandon the ancient ODB editor support.
-- [beta] Localize newly added strings in Chinase, German, and Italian.
+- [beta] Localize newly added strings in Chinese, German, and Italian.
 - [non-AppStore ver.] Update Sparkle framework.
 
 
@@ -2270,7 +3482,7 @@ no change.
 ### New Features
 
 - Support Dark Mode in macOS 10.14 Mojave.
-- Add a new theme “Dendrobates (Dark)”.
+- Add a new theme “Dendrobates (Dark).”
 - Add new commands to transform selections to snake case, camel case, or pascal case.
 - Add “Emoji & Symbols” toolbar item.
 - [non-AppStore] The non-AppStore application binary is now notarized by Apple.
@@ -2304,8 +3516,8 @@ no change.
 
 ### Fixes
 
-- Fix an issue where toolbar items did not reflect their state on macOS 10.12 or earier.
-- Fix margin around the Tab toolbar icon on macOS 10.12 or earier.
+- Fix an issue where toolbar items did not reflect their state on macOS 10.12 or earlier.
+- Fix margin around the Tab toolbar icon on macOS 10.12 or earlier.
 
 
 
@@ -2356,7 +3568,6 @@ no change.
 
 
 
-
 3.5.0 (268)
 --------------------------
 
@@ -2373,7 +3584,7 @@ no change.
 
 ### New Features
 
-- Let the input fields in the find panel accept text scaling commands, such as “Bigger”, “Smaller” and “Reset to Default”.
+- Let the input fields in the find panel accept text scaling commands, such as “Bigger,” “Smaller,” and “Reset to Default.”
 
 
 ### Improvements
@@ -2490,7 +3701,7 @@ no change.
 ### Fixes
 
 - Fix an issue under OS X 10.11 where the application could crash when an item in the outline inspector is clicked.
-- Fix an issue where the word completion of which word starts with double underscores (e.g. `__init__`) skipped the second underscore.
+- Fix an issue where the word completion of which word starts with double underscores (e.g., `__init__`) skipped the second underscore.
 - Fix an issue where the application could rarely crash while typing.
 - [AppStore ver.] Fix an issue where the options for the software updater for non-AppStore versions were wrongly displayed in the General preferences pane.
 
@@ -2543,8 +3754,8 @@ no change.
 ### Fixes
 
 - Fix an issue where the sidebar inspector did close inward when the pane was switched after opening the sidebar outward.
-- Fix an issue where snippet keybindings could not be restored to the default correctly.
-- Fix an issue where progress spinner for outline menu displayed unwantedly on document opening.
+- Fix an issue where snippet key bindings could not be restored to the default correctly.
+- Fix an issue where progress spinner for outline menu displayed unwontedly on document opening.
 - [beta] Fix an issue where deletion of replacement set items was not saved.
 - [beta] Fix a possible crash on window closing.
 - [beta][non-AppStore ver.] Fix an issue where options for the application update check in General preferences pane disappeared.
@@ -2600,8 +3811,8 @@ no change.
 - Remove `⌘1` shortcut for Console from default key-binding settings.
 - Avoid switching to inactive tabbed window only to show a syntax highlighting indicator.
 - Remove the workaround for the issue of editor scrolling on early macOS High Sierra that was introduced on CotEditor 3.2.4.
-- Update “Java” syntax style by adding term `var` (Thanks to Marc Prud'hommeaux!)
-- [trivial] Use monospace digits where suitable.
+- Update Java syntax style by adding term `var` (Thanks to Marc Prud'hommeaux!)
+- [trivial] Use monospaced digits where suitable.
 - [trivial][non-AppStore ver.] Update Sparkle framework.
 - [dev] Update build environment to Xcode 9.3 (Swift 4.1).
 
@@ -2619,14 +3830,14 @@ no change.
 
 ### Improvements
 
-- Update “Swift” syntax style for Swift 4.1.
+- Update Swift syntax style for Swift 4.1.
 
 
 ### Fixes
 
 - Fix an issue where application could rarely crash under specific environment on saving.
 - Fix an issue where the domain part of URL was ignored when a favicon was dropped from Safari to editor.
-- Update “YAML” syntax style to fix outline extraction with a specific case.
+- Update YAML syntax style to fix outline extraction with a specific case.
 
 
 
@@ -2666,7 +3877,7 @@ no change.
 - Refine dialog messages on text encoding change.
 - Change sidebar behavior to close inward when it was opened inward because of insufficient space.
 - Avoid requiring high power GPU use.
-- [trivial] Hide insertion point in shortcut input fields in the Key Binding pane.
+- [trivial] Hide insertion point in shortcut input fields in the Key Bindings pane.
 - [trivial] Set a spoken name of CotEditor.
 - [trivial] Add `enablesAsynchronousSaving` hidden default key that enables asynchronous saving.
 - [non-AppStore ver.] Update Sparkle framework.
@@ -2678,7 +3889,7 @@ no change.
 - Fix an issue where key-binding setting field sometimes ignored user input.
 - Fix an issue where wrong file creation date and file permission could be displayed in the document inspector.
 - Fix an issue where document files did not forget vertical orientation state when once set before.
-- Fix an issue where the encoding selected in the open dialog last time was unwantedly applied to the newly opened document when a document opened with the open dialog previously had already opened.
+- Fix an issue where the encoding selected in the open dialog last time was unwontedly applied to the newly opened document when a document opened with the open dialog previously had already opened.
 - Fix an issue where menu item title for “Horizontal” (in Format > Writing Direction) was displayed as “Vertical” in Japanese localization.
 
 
@@ -2721,7 +3932,7 @@ no change.
 
 - [beta] Adjust position of invisible line ending character on the RTL writing mode.
 - [beta] Tweak the layout of the “Sort by Pattern” dialog.
-- Update Help contents style.
+- Update the style of the User Guide.
 
 
 ### Fixes
@@ -2742,7 +3953,7 @@ no change.
 ### Improvements
 
 - Enable “shift right” and “shift left” commands to process multiple selections.
-- [beta] Swap actions for “shift right” and “shift left” in the RTL writing mode so that the indentation direction matchs to the command name.
+- [beta] Swap actions for “shift right” and “shift left” in the RTL writing mode so that the indentation direction matches to the command name.
 - [beta] Add “Keep the first line at the top” option to the pattern sort.
 - [beta] Add toolbar item toggling writing direction.
 - [beta] Update alignment icons in print pane.
@@ -2791,7 +4002,7 @@ no change.
 - Swap position of “View” with “Format” menu to conform to the Apple's Human Interface Guidelines.
 - Move the menu item changing the text orientation into Format > Writing Direction.
 - Display full encoding name in the status bar instead of the IANA charset name.
-- Add tooltips to the Unicode normalization forms in Text menu.
+- Add help tags to the Unicode normalization forms in Text menu.
 - Append “Option-Command-T” shortcut to “Show/Hide Toolbar” menu item.
 - Remove “Color Code Panel” command from the “Window” menu (use “Edit Color Code...” command in “Text” menu instead).
 - Remove “share find text with other applications” option.
@@ -2868,7 +4079,7 @@ no change.
 
 - Fix an issue where a vertical orientation document broke the layout on printing.
 - Fix an issue where the syntax highlighting indicator could display twice.
-- Fix an issue where the separator was selected meaninglessly in the Window pane if the window tabbing setting was set to “Manually”.
+- Fix an issue where the separator was selected meaninglessly in the Window pane if the window tabbing setting was set to “Manually.”
 - Fix an issue where editor's text orientation was not cascaded to the print operation when the window was restored from the last session.
 - Fix the line-wrapping behavior when a line contains a long unbreakable word.
 - Fix some missing localized strings.
@@ -2884,7 +4095,7 @@ no change.
 - Keep showing the console when CotEditor becomes inactive.
 - Make the Key-Bindings for “Bigger” and “Smaller” actions in Font menu customizable.
 - Change to display the first line number even the document is empty.
-- Rename “Incompatible Characters” toolbar item to “Incompatibles”.
+- Rename “Incompatible Characters” toolbar item to “Incompatibles.”
 - Some minor UI improvements and fixes.
 
 
@@ -2895,7 +4106,7 @@ no change.
 - Fix an issue where “Reset to Default” action in Font menu was ignored.
 - Fix an issue where matching brace was highlighted unwontedly also by text finding.
 - Fix an issue where the encoding and the line endings in the status bar were occasionally not displayed.
-- Fix an issue where the application froze by getting the content of a large document via the Script menu.
+- Fix an issue where the application froze by getting the contents of a large document via the Script menu.
 - Fix an issue where the second value of the printed time in the console was not sexagesimal.
 - Improve general stability.
 
@@ -2907,14 +4118,14 @@ no change.
 ### Improvements
 
 - Disable toggling sidebar while the tab overview mode on High Sierra.
-- Update “CSS” syntax style:
+- Update CSS syntax style:
     - Fix an issue where keywords were highlighted incorrectly.
 - Some minor improvements and fixes.
 
 
 ### Fixes
 
-- Fix an issue where UNIX scripts could fail getting the content of the document.
+- Fix an issue where UNIX scripts could fail getting the contents of the document.
 - Fix an issue where font change in the preferences pane could be ignored.
 - Fix a potential issue where syntax keywords could be highlighted incorrectly if whitespaces accidentally get into keywords definition.
 - Workaround an issue where word suggestion in the Touch Bar cannot insert a word starts with a symbol correctly.
@@ -2937,8 +4148,8 @@ no change.
     - Improve the progress indicator.
 - Change to highlight matching braces just like Xcode.
     - No more beep for unbalanced braces.
-- Update “JavaScript” syntax style:
-    - Add “.pac” extension.
+- Update JavaScript syntax style:
+    - Add .pac extension.
 - Update build environment to Xcode 9 (SDK macOS 10.13).
 
 
@@ -3014,7 +4225,7 @@ no change.
 - Now, key binding snippets can set cursor position.
 - Add “Surround Selection With” actions to “Text” menu.
 - Add a new AppleScript/JXA command `write to console` so that users can insert own message to the CotEditor's console.
-- Add syntax style for “Fortran”.
+- Add syntax style for Fortran.
 
 
 ### Improvements
@@ -3029,11 +4240,11 @@ no change.
 - Enable changing text size with a single stroke by pressing and holding Touch Bar's Text Size button.
 - Improve invisible character drawing on a non-opaque view.
 - Improve auto-brackets/quotes insertion behavior with multiple selections.
-- Improve the setting file naming rule for when the name overwraps with an existing setting.
+- Improve the setting file naming rule for when the name overlaps with an existing setting.
 - Improve condition to insert a closing quote automatically.
 - Improve the encoding declaration detection.
-- Update “Ruby” syntax style to fix commands highlight.
-- Update “MATLAB” syntax style to fix strings highlight.
+- Update Ruby syntax style to fix commands highlight.
+- Update MATLAB syntax style to fix strings highlight.
 - Remove less useful “Inline script menu items into contextual menu” option.
 - Update German localization (Thanks to J-rg!).
 - And some minor improvements and fixes.
@@ -3059,7 +4270,7 @@ no change.
 
 ### Improvements
 
-- Add “.swift” extension to file types treaded as CotEditor script.
+- Add .swift extension to file types treaded as CotEditor script.
 - [non-AppStore ver.] Update Sparkle framework to version 1.17.0.
 
 
@@ -3143,8 +4354,8 @@ no change.
 - Evaluate also the shebang to specify the syntax style on saving the document newly.
 - Scale up character view in character inspector.
 - Change drawing font for some invisible characters to draw them at a better position.
-- Update “JavaScript” syntax style.
-- Add more description about scripting in the help contents.
+- Update JavaScript syntax style.
+- Add more description about scripting in the User Guide.
 - Deprecate hidden settings for UI update interval.
 - Update build environment to Xcode 8.2.1 (SDK macOS 10.12.2).
 - [non-AppStore ver.] Update Sparkle framework to version 1.16.0.
@@ -3181,7 +4392,7 @@ no change.
 ### Improvements
 
 - Change the outline navigation arrows direction in the navigation bar if text orientation is vertical.
-- Add tooltips to the line endings menu in the toolbar.
+- Add help tags to the line endings menu in the toolbar.
 - Improve calculation of the vertical position of line numbers.
 - Tweak the behavior of the incompatible character table and the find result table to highlight the correspondent range in the editor every time when clicking a row in the table.
 - Update default settings about the visibility of invisible characters.
@@ -3292,7 +4503,7 @@ no change.
 - Adjust glyph size calculation.
 - Improve performance of Find All and Replace All.
 - Disable customizing key bindings for window tabbing actions (Because it's impossible to handle them correctly.)
-- Update “Swift” syntax style to add some missing keywords.
+- Update Swift syntax style to add some missing keywords.
 - Improve error message on script error.
 
 
@@ -3302,7 +4513,7 @@ no change.
 - Fix an issue where selection range after some text actions was wrong.
 - Fix an issue where document icons were blurry in non-Retina display.
 - Fix an issue where status bar layout collapsed if status line overflows.
-- Fix an issue where document theme reloaded unnecessarily on the first time Appearances pane display.
+- Fix an issue where document theme reloaded unnecessarily on the first time Appearance pane display.
 - Fix an issue where the application could crash when a script was failed.
 - Fix an issue where scrolling to the end of the document with `⌘`+`↓` shortcut didn't scroll to the end.
 - Improve general stability.
@@ -3333,7 +4544,7 @@ no change.
 
 - Add “Complete” action to “Edit” menu.
 - On macOS Sierra, the default shortcut for completion action was changed to `⌥⎋`.
-- Move action items in the menu “Edit” > “Transformations” to “Text” > “Transformations”.
+- Move action items in the menu “Edit” > “Transformations” to “Text” > “Transformations.”
 - Transform word contains the cursor if nothing is selected on transformation or Unicode normalization actions.
 
 
@@ -3350,7 +4561,7 @@ no change.
 - Fix an issue where find panel position was not saved.
 - Fix an issue where no beep sound was made when there was no match on find/replace.
 - Fix an issue where the application could freeze after replacing large document.
-- Fix an issue where editable area didn't spread to the full width after changing text orientation when content is empty.
+- Fix an issue where editable area didn't spread to the full width after changing text orientation when contents were empty.
 - Fix an issue where matched brackets in unfocused split editors were highlighted without the need while editing one of split editors.
 - Improve general stability.
 
@@ -3412,17 +4623,17 @@ no change.
     - Open sideview outward also on Yosemite.
     - Sync states of sidebar among tabs in a window more correctly.
     - Fix some unwanted behavior around sidebar.
-- [beta] Update help contents.
+- [beta] Update the User Guide.
 
 
 ### Fixes
 
 - [beta] Fix an issue where the application could crash on document file sync.
 - [beta] Fix an issue where the application could crash on termination.
-- [beta] Fix an issue where document could silently be updated by an external document file update even if user doesn't set to “Update to modified version”.
+- [beta] Fix an issue where document could silently be updated by an external document file update even if user doesn't set to “Update to modified version.”
 - [beta] Fix an issue where smart dashes substitution state could be set wrongly.
 - [beta] Fix an issue where auto indent style detection didn't work.
-- [beta] Fix an issue where files were treated as dropped-files instead of just inserting filenames when files are copied-and-pasted from Finder.
+- [beta] Fix an issue where files were treated as dropped-files instead of just inserting filenames when files are copied-and-pasted from the Finder.
 - [beta] Fix an issue where the find panel was occasionally collapsed.
 - [beta] And some trivial fixes.
 
@@ -3477,7 +4688,7 @@ no change.
     - Add “New Tab” action to File menu.
     - Sync sidebar visibility among tabs in a window.
 - Display recent used syntax styles at the top of the toolbar syntax style popup list.
-- Add individual “Block Comment”, “Inline Comment” and “Uncomment” actions in Text menu unlike the “Comment Selection” action changes its behavior intelligently.
+- Add individual “Block Comment,” “Inline Comment,” and “Uncomment” actions in Text menu unlike the “Comment Selection” action changes its behavior intelligently.
 
 
 ### Improvements
@@ -3495,8 +4706,8 @@ no change.
 - Update key binding setting format.
     - Not compatible with previous key bindings setting. Please customize again in the preferences window.
 - New acknowledgments window.
-- Update “Swift” syntax style to Swift 3.0.
-- Update “Coffee Script” syntax style for the block regular expression.
+- Update Swift syntax style to Swift 3.0.
+- Update Coffee Script syntax style for the block regular expression.
 - Improve syntax highlighting algorithm with symbols.
 - New “Go To Line” panel.
 - Remove the following less important text actions:
@@ -3518,7 +4729,7 @@ no change.
 - Display also an accurate file size in document inspector.
 - Display dialogs for changing file encoding as a document-modal sheet.
 - Display also an accurate file size in document inspector.
-- Move scripting manual into help contents.
+- Move scripting manual into the User Guide.
 - Make window size setting window translucent.
 - Avoid expanding status bar into side inspector.
 - Improve line height calculation.
@@ -3541,7 +4752,7 @@ no change.
 ### Fixes
 
 - Fix German localization (Thanks to J-rg!).
-- Fix “Markdown” and “Verilog” syntax styles.
+- Fix Markdown and Verilog syntax styles.
 - Fix update range of syntax highlight while editing.
 - Fix key binding setting error message.
 - Fix an issue where syntax validation result view was editable.
@@ -3554,17 +4765,17 @@ no change.
 
 ### New Features
 
-- Add newly rewritten syntax styles for “C” and “C++”.
+- Add newly rewritten syntax styles for C and C++.
     - From this change, previous “C, C++, Objective-C” syntax style is deleted.
-- Add syntax styles for “MATLAB” and “Verilog”.
+- Add syntax styles for MATLAB and Verilog.
 
 
 ### Improvements
 
-- Update “Markdown” syntax style:
+- Update Markdown syntax style:
     - Support strikethrough with `~~` that is defined in the GitHub flavored Markdown.
     - Support emphasis with triple `*` and `_`.
-- Focus back on the find panel after performing “Find All”, “Replace All” and “Highlight”.
+- Focus back on the find panel after performing “Find All,” “Replace All,” and “Highlight.”
 - Change to use the body text color for line numbers on printing that was previously always black.
 - Improve scroll behavior with arrow keys.
 - Improve compatibility with macOS Sierra beta.
@@ -3576,7 +4787,7 @@ no change.
 - Fix document counting as followings:
     - “Char Count” counts composite characters as well as CR/LF as single characters and omits counting line endings if “Count each line ending as one character” option is off.
     - “Length” counts bytes in UTF-16 literally and always counts line endings even if “Count each line ending as one character” option is off.
-    - “Location” and “Column” count characters just like “Char Count”.
+    - “Location” and “Column” count characters just like “Char Count.”
 - Fix an issue where the selected marks of line height / tab width in the Format menu disappeared.
 - Fix an issue where unselected last line number could be highlighted if the text orientation is vertical.
 - Fix an issue where invisible characters were drawn off to the side if the text orientation is vertical.
@@ -3585,7 +4796,7 @@ no change.
 - Fix an issue where detected indent style was applied not only on file opening but also every time when file reverted.
 - Fix an issue where “Find All” result view did not open on OS X Mountain Lion.
 - Fix an issue where incompatible character markup could break if undo/redo lossy encoding change continuously.
-- Fix an issue where keybindings of some submenu containers were customizable.
+- Fix an issue where key bindings of some submenu containers were customizable.
 - Fix an issue where tab width could be set as `0`.
 - Fix an issue where tab width changing via AppleScript changes only the tab width in the focused editor rather than all split editors.
 - Fix an issue where byte length display did not update after changing file encoding.
@@ -3597,12 +4808,12 @@ no change.
 
 ### New Features
 
-- Add syntax style for “Git”.
+- Add syntax style for Git.
 
 
 ### Improvements
 
-- Update “Julia” and “Swift” syntax styles.
+- Update Julia and Swift syntax styles.
 - Apply the change of line height/tab width to all split editors so that split editors not focused also can layout text correctly after the change.
 - Optimize text rendering performance a bit.
 
@@ -3653,12 +4864,12 @@ no change.
     - Improve line-height calculation.
 - Optimize performance to apply syntax highlight to document significantly.
 - Now, the setting changes of status bar, appearance, tab and invisible chars are applied to documents immediately.
-- Update “INI” syntax style.
+- Update INI syntax style.
 - Remove spelling auto correction option.
 - Remove “Delay coloring” option.
 - Enable move between input fields in syntax style editor with Tab key.
 - Apply font-face to font fields in preferences.
-- Apply document line height on “Copy with Style”.
+- Apply document line height on “Copy with Style.”
 - Reflect the state of “Increase contrast” option in system Accessibility setting to custom UI.
 - Adjust preferences layout.
 
@@ -3693,7 +4904,7 @@ no change.
 ### Improvements
 
 - Change underline style of outline items.
-- Update “JavaScript” syntax style:
+- Update JavaScript syntax style:
     - Improve outline definitions to support the class syntax sugar introduced in ECMAScript 6.
     - Better coloring for “get” and “set”.
 
@@ -3733,10 +4944,10 @@ no change.
 - Add independent “Unicode (UTF-8) with BOM” encoding to encoding list.
     - Respect the existence of the UTF-8 BOM in opened files.
     - Enable switching the document encoding between with and without BOM from the toolbar popup button and the “Format” menu.
-        - The “Unicode (UTF-8) with BOM” item will be automatically added to just after the normal “Unicode (UTF-8)”.
+        - The “Unicode (UTF-8) with BOM” item will be automatically added to just after the normal “Unicode (UTF-8).”
 - Now, the execute permission can be given to the file to save from the save panel.
 - Add spelling auto correction option (in “Edit” pane).
-- Add a new theme “Lakritz”.
+- Add a new theme “Lakritz.”
 
 
 ### Improvements
@@ -3797,13 +5008,13 @@ no change.
 
 - Reimplement highlighting found string groups with different colors.
 - Update BibTeX syntax style:
-    - Add “.bibtex” extension.
+    - Add .bibtex extension.
     - Add some field names.
 - Update Python syntax style:
     - Remove a duplicated term.
 - Now, the change of the page guide column option is applied to opened documents immediately.
 - Tweak text in preferences.
-- Update help contents.
+- Update the User Guide.
 - [non-AppStore ver.] Update Sparkle framework to version 1.14.0.
 
 
@@ -3815,7 +5026,7 @@ no change.
 - Fix an issue where printing color theme couldn't be changed to “Black and White” on print panel.
 - Fix an issue where print preview collapsed if paper size is changed on print panel.
 - Fix an issue where “ignore case” option in syntax style definition didn't actually ignore case.
-- Fix an issue where the current file extension was omitted from new suggested file name on “Save As…” operation.
+- Fix an issue where the current file extension was omitted from new suggested filename on “Save As…” operation.
 - Fix some typos in German localization. (Thanks to Chris Eidhof!)
 
 
@@ -3928,7 +5139,7 @@ no change.
 - Take a safety measure for in case the key binding setting file is corrupt.
 - Truncate outline label in the navigation bar by appending ellipsis if it overflows.
 - Move some options position within “General” pane and “Edit” pane in the preferences window.
-- Rename the main text input area in window from “View” to “Editor”.
+- Rename the main text input area in window from “View” to “Editor.”
 
 
 ### Fixes
@@ -3937,9 +5148,9 @@ no change.
 - Fix line-wrapping behavior when the line contains a long unbreakable word.
 - Fix an issue where the application crashed by an invalid find regular expression option combination.
 - Fix an issue where the application could crash just after starting dictation.
-- Fix an issue where keybinding setting could fail.
+- Fix an issue where key binding setting could fail.
 - Fix an issue where the scroll bar style didn't change to light color on dark background theme.
-- Fix an issue where the character inspector didn't show up on Mavericks and earlier.
+- Fix an issue where the character inspector didn't appear on Mavericks and earlier.
 - Fix an issue where split orientation setting wasn't applied.
 - Fix an issue where “Jump to Selection” action didn't jump to selection in editor if another text box is focused.
 - Fix an issue where some table cells didn't change their text color when selected.
@@ -3985,7 +5196,7 @@ no change.
     - Allow also taking a 1 to 3 digits point code.
     - Avoid auto-closing panel after entering character.
 - Improve character inspector:
-    - Display more comprehensible name for control characters (e.g. `<control-0000>` to `NULL`).
+    - Display more comprehensible name for control characters (e.g., `<control-0000>` to `NULL`).
     - Display an alternate visible symbol in the zoomed character area for C0 control characters.
 - Improve installed syntax style list in preferences:
     - Add dot mark to style names in the list to represent the state if the style is customized.
@@ -4026,7 +5237,7 @@ no change.
 ### New Features
 
 - Add “Convert Indentation to Spaces/Tabs” actions to Text > Indentation menu.
-- Add syntax styles for “METAFONT” (Thanks to M.Daimon!), “AWK”, “Git Config” and “Git Ignore”.
+- Add syntax styles for METAFONT (Thanks to M.Daimon!), AWK, Git Config, and Git Ignore.
 
 
 ### Improvements
@@ -4044,7 +5255,7 @@ no change.
 - Improve text encoding detection for UTF-32.
 - Update Python syntax style:
     - Add several commands and variables that are in `__foo__` form.
-    - Add `pyi` extension.
+    - Add .pyi extension.
 - Update Perl syntax style:
     - Add some terms.
 - Update PHP syntax style:
@@ -4080,7 +5291,7 @@ no change.
 - Update R syntax style:
     - Fix boolean values were not highlighted correctly.
 - Update Shell Script syntax style:
-    - Add “command” to extension list.
+    - Add .command to extension list.
 
 
 ### Fixes
@@ -4101,7 +5312,7 @@ no change.
 
 ### Improvements
 
-- Update “R” syntax style:
+- Update R syntax style:
     - Add “Rscript” to interpreters.
 - Bundle cot command to `CotEditor.app/Contents/SharedSupport/bin/` again.
 - Tweak UI text.
@@ -4127,18 +5338,18 @@ no change.
 - Detect indent style on file opening and set tab expand automatically.
 - Add “Spell Check” button to toolbar icon choices.
     - Customize toolbar to add it to your toolbar.
-- Add syntax styles for “D”, “iCalendar” and “Rich Text Format”.
+- Add syntax styles for D, iCalendar, and “Rich Text Format.”
 
 
 ### Improvements
 
 - Reconstitute main menu.
 - Embed key bindings editor to Key Bindings pane.
-- Update “Shell Script” syntax style:
+- Update Shell Script syntax style:
     - Completely rewrite.
-- Update “INI” syntax style:
-    - Add “url” to extension list.
-- Update “JavaScript” syntax style:
+- Update INI syntax style:
+    - Add .url to extension list.
+- Update JavaScript syntax style:
     - Add “z” to attributes.
 - Temporarily hide the “Live Update” checkbox in the find panel since this feature by OgreKit framework has actually not worked correctly in the latest versions.
 - Update Onigmo regular expression engine to 5.15.0.
@@ -4150,7 +5361,7 @@ no change.
 - Address syntax highlighting issue with multiple lines.
 - Fix an issue where text view drawing was distorted while resizing window.
 - Fix an issue where the application could crash on window restoration.
-- Fix some typos in syntax styles “Julia” and “SQL”.
+- Fix some typos in syntax styles Julia and SQL.
 
 
 
@@ -4166,8 +5377,8 @@ no change.
 
 ### Improvements
 
-- Update “JSON” syntax style:
-    - Add “geojson” to extension list.
+- Update JSON syntax style:
+    - Add .geojson to extension list.
 
 
 ### Fixes
@@ -4203,7 +5414,7 @@ no change.
 
 ### New Features
 
-- Add new themes “Anura” and “Note”.
+- Add new themes “Anura” and “Note.”
 
 
 ### Improvements
@@ -4212,12 +5423,12 @@ no change.
     - To use `cot` command with CotEditor 2.2.0 and later, download it from <http://coteditor.com/cot> and install manually. You cannot use the previous one with CotEditor 2.2.0.
 - Improve saving error dialog to display more detailed error reason.
 - Avoid beeping on typing an unmatched `>` even if `<>` brace highlighting turned on.
-- Update “Swift” syntax style:
+- Update Swift syntax style:
     - Add new terms available in Swift 2.0.
 - Improve contextual menu for theme/syntax style list on preferences.
 - Tweak syntax style edit sheet layout.
 - Remove sample scripts.
-    - You can get them online on [Archives](http://coteditor.com/archives) page.
+    - You can get them online on [Archives](https://coteditor.com/archives) page.
 - Update documents.
 - [beta] Improve side inspector switcher.
 
@@ -4229,7 +5440,7 @@ no change.
 - Fix an issue where the application crashed when typing a part of surrogate pair character.
 - Fix an issue where invisibles which are a surrogate pair occasionally did not display.
 - Fix an issue where the toolbar button state of the text orientation was not updated on window restoration.
-- Fix help contents layout.
+- Fix the layout of the User Guide.
 - [rc] Fix an issue where table headers had sometimes unwanted space around them on Yosemite and earlier.
 - [rc] Fix an issue where calculation of hanging indent width was sometimes incorrect.
 - [beta] Fix an issue where an unwanted migration window was displayed on the first launch even when there is nothing to be migrated.
@@ -4263,7 +5474,7 @@ no change.
     - Add stylesheet keyword to color code type.
     - Add stylesheet keyword color list to editor panel.
     - Make editor panel resizable.
-- Now syntax style is automatically set to “XML” on file opening if no appropriate style can be found but the file content starts with an XML declaration.
+- Now syntax style is automatically set to XML on file opening if no appropriate style can be found but the file contents start with an XML declaration.
 - Update word completion list setting in Edit pane in Preferences (The previous setting has been reset).
 - Support “swipe to delete” for some tables in Preferences on El Capitan.
 - Improve contextual menu for theme list on preferences.
@@ -4304,7 +5515,7 @@ no change.
     - __for advanced users__: In this feature, CotEditor saves an *extended attribute* which named `com.coteditor.VerticalText` to the file *only when* the editor's text orientation is vertical. You can even disable the feature running the command `defaults write com.coteditor.CotEditor savesTextOrientation -bool NO` in Terminal.
 - Line number view for vertical text orientation.
 - Print with vertical text orientation.
-- Add interpreter name list to the syntax style definition to determine syntax style from the shebang in the file content for in case when syntax style cannot be determined from the file name.
+- Add interpreter name list to the syntax style definition to determine syntax style from the shebang in the file contents for in case when syntax style cannot be determined from the filename.
     - From this change, some of the bundled syntax styles are also updated.
 - Add `encoding:` and `coding:` to the encoding declaration keywords which will be used on encoding auto-detection (interpreting priorities are: `charset=` > `encoding=` > `@charset` > `encoding:` > `coding:`).
 
@@ -4328,7 +5539,7 @@ no change.
     - Print settings preset can be stored in the print panel.
 - Better file encoding handling on revert action.
 - Set access-group `com.coteditor.CotEditor.edit` to CotEditor's script definition.
-- Change behavior to save `com.apple.TextEncoding` xattr on saving if the file had no content.
+- Change behavior to save `com.apple.TextEncoding` xattr on saving if the file had no contents.
 - Improve window restoration:
     - To restore also the last scroll position and cursor position.
     - To restore also the last syntax style mode of unsaved documents.
@@ -4386,7 +5597,7 @@ no change.
 - Add suppression button to the IANA charset name conflict alert.
 - Improve word completion with words that exist in the document.
 - Modify layout of “General” pane in Preferences.
-- Add tooltip hint to controls in the find panel.
+- Add help tag hint to controls in the find panel.
 - Optimize image resources size.
 - Update Sparkle framework to version 1.10.0.
 
@@ -4461,7 +5672,7 @@ no change.
 ### Improvements
 
 - [beta] Add `--new` option to `cot` command-line tool.
-- Update help contents.
+- Update the User Guide.
 
 
 ### Fixes
@@ -4473,7 +5684,7 @@ no change.
 - [beta] Fix an issue where split orientation setting was ignored.
 - [beta] Fix an issue where text replacement could occasionally fail.
 - [beta] Fix an issue where closed windows remained in memory.
-- [beta] Fix an issue where the application hangs up on opening documents with the specific file name on Mountain Lion.
+- [beta] Fix an issue where the application hangs up on opening documents with the specific filename on Mountain Lion.
 - [beta] Fix line number drawing with non-opaque view on Mountain Lion.
 
 
@@ -4543,7 +5754,7 @@ no change.
 - New AppleScript property `tab width` for document object.
 - Now, CotEditor script receives the absolute file path of the frontmost document as an argument if available.
 - Add “New CotEditor Document with Selection” and “Open File in CotEditor” Services.
-- Add syntax styles for “Erlang” and “Julia”.
+- Add syntax styles for Erlang and Julia.
 
 
 ### Improvements
@@ -4575,7 +5786,7 @@ no change.
 - Delay timing to save text key bindings setting.
 - Localize document types.
 - Improve text rendering with non-opaque view.
-- Update “Markdown” syntax style:
+- Update Markdown syntax style:
     - Add horizontal rules to outline menu.
 - Tweak text view drawing performance.
 
@@ -4615,17 +5826,17 @@ no change.
 
 ### Improvements
 
-- Add “Traditional Chinese (Big 5 HKSCS)”, “Traditional Chinese (Big 5-E)” and “Traditional Chinese (Big 5)” to encoding list.
+- Add “Traditional Chinese (Big 5 HKSCS),” “Traditional Chinese (Big 5-E),” and “Traditional Chinese (Big 5)” to encoding list.
 - Add “show invisible characters” option to set the visibility of all invisible character types at once.
     - From this, invisibles visibility of displayed windows can be toggled even all invisibles are hidden as default.
 - Now, the popup menus in toolbar can be called directly even on “Text Only” mode without mode change.
 - Now, window states will resume from the last session.
-- Change default syntax style from “None” to “Plain Text”.
+- Change default syntax style from “None” to “Plain Text.”
 - Improve syntax highlighting performance.
 - Remove delay when an AppleScript/JavaScript is run for the first time after application launch.
-- Update “CSS” syntax style:
+- Update CSS syntax style:
     - Add several keywords. (Thanks to Nathan Rutzky!)
-- Update “JSON” syntax style:
+- Update JSON syntax style:
     - Improve highlighting performance.
 - Improve find panel behavior with Spaces.
 - Disable rich text in find panel.
@@ -4635,7 +5846,7 @@ no change.
 
 - Fix page guide position and tab width.
 - Fix an issue that “Go” button in “Go To” sheet didn't work by clicking.
-- Fix an issue that line endings menu in toolbar whose document had been newly created was always set to “LF”.
+- Fix an issue that line endings menu in toolbar whose document had been newly created was always set to LF.
 - Fix an issue that cancellation of syntax extracting didn't work immediately under the specific conditions.
 - Fix an issue that selecting inside of brackets by double-clicking didn't work.
 - Fix an issue that script execution with large size output could cause application hang up.
@@ -4661,10 +5872,10 @@ no change.
 ### New Features
 
 - Introduce new AppleScript commands `comment out` and `uncomment` for selection object.
-- Add “js“ extension to CotEditor script type.
+- Add .js extension to CotEditor script type.
     - __Hint__: Use `#!/usr/bin/osascript -l JavaScript` for shebang to run script as Yosemite's JavaScript for Automation.
 - Add “Create Bug Report…” action to the Help menu.
-- Add syntax style for “BibTeX”.
+- Add syntax style for BibTeX.
 
 
 ### Improvements
@@ -4672,17 +5883,17 @@ no change.
 - Display an alert if the opening file is larger than 100 MB.
 - Change the default value for “Comment always from line head” option to enable.
 - Rename labels for line endings.
-- Update “Python” syntax style:
+- Update Python syntax style:
     - Fix highlighting `print` command.
-- Update “Ruby” syntax style:
+- Update Ruby syntax style:
     - Improve highlighting `%` literals.
-- Update “R” syntax style:
-    - Add file name `.Rprofile` to file mapping.
-- Update “JavaScript” syntax style:
+- Update R syntax style:
+    - Add filename `.Rprofile` to file mapping.
+- Update JavaScript syntax style:
     - Highlight shebang as a comment.
 - Update documents for scripting with AppleScript.
 - Update sample scripts.
-- Remove syntax style for “eRuby”.
+- Remove syntax style for eRuby.
 
 
 ### Fixes
@@ -4709,9 +5920,9 @@ no change.
 
 ### Improvements
 
-- Rename “Spelling” menu item to “Spelling and Grammer” in Edit menu, and also add “Substitutions” and “Transformations” items
-    - From this, remove “Uppercase”, “Lowercase” and “Capitalize” in “Utility” menu.
-- Update “Apache” syntax style:
+- Rename “Spelling” menu item to “Spelling and Grammar” in Edit menu, and also add “Substitutions” and “Transformations” items
+    - From this, remove “Uppercase,” “Lowercase,” and “Capitalize” in “Utility” menu.
+- Update Apache syntax style:
     - Indent outline items.
 - Change not to include menu items that manage the script menu in the context menu.
 - [beta] Change the line-up of substitute characters for full-width spaces.
@@ -4738,7 +5949,7 @@ no change.
 
 ### New Features
 
-- Add syntax styles for “Rust” and “Tcl”.
+- Add syntax styles for Rust and Tcl.
 
 
 ### Improvements
@@ -4746,15 +5957,15 @@ no change.
 - Apply theme color to the line number view.
 - Change the bundle identifier from `com.aynimac.CotEditor` to `com.coteditor.CotEditor`.
 - Improve key bindings edit sheets.
-- Update “YAML” syntax style:
+- Update YAML syntax style:
     - Improve outline extracting rules.
 - Deprecate “Drag selected text immediately” setting.
 - Tweak result messages by syntax style validator and partially localized.
-- Move version history from rich text format to one of the Help contents.
+- Move version history from rich text format to one of the User Guide.
 - Improve background drawing:
     - On Mountain Lion and later, scrolling performance on semi-transparent views has been improved.
     - On Mountain Lion and later, text view gets no drop-shadow by texts on semi-transparent.
-- Avoid the move to previous outline item button to select the first “<Outilne Menu>” item.
+- Avoid the move to previous outline item button to select the first “<Outline Menu>” item.
 - Deprecate text color setting for line number view which is hidden setting.
 - Remove the output type keyword `Pasteboard puts` for CotEditor script, that was deprecated on CotEditor 0.7.2 and had remained for backwards compatibility.
 - [beta] Display migration panel on the first launch.
@@ -4775,8 +5986,8 @@ no change.
 - [beta] Fix an issue that semi-transparent text views flicked on scrolling on Yosemite.
 - [beta] Avoid horizontal scrollers on syntax edit sheets in Japanese localization.
 - [beta] Fix an issue that coloring label names were partially missing in syntax style validator.
-- [beta] Fix syntax colorings of “Haskell”, “LaTeX” and “PHP” styles.
-- [beta] Fill missing tooltips of some toolbar icons in the English localization.
+- [beta] Fix syntax colorings of Haskell, LaTeX, and PHP styles.
+- [beta] Fill missing help tags of some toolbar icons in the English localization.
 - [beta] Fix a possible issue that syntax highlighting could not be updated after style edit.
 
 
@@ -4787,7 +5998,7 @@ no change.
 ### Improvements
 
 - Rename some labels in print setting.
-- [beta] Update “AppleScript” syntax style:
+- [beta] Update AppleScript syntax style:
     - Update commands that were changed on CotEditor 2.0.
 - [beta] Tweak toolbar icons on preferences window.
 - Tweak a label name in incompatible chars in Japanese.
@@ -4809,11 +6020,11 @@ no change.
 
 - Coloring theme feature.
 - Comment toggling feature.
-- Add “types”, “attributes” and “variables” to syntax highlighting colors.
+- Add “types,” “attributes,” and “variables” to syntax highlighting colors.
 - Now, syntax style can be determined not only from file extensions but also from filenames.
-    - From this, rename “Extensions” in syntax edit sheet to “File Mapping”.
+    - From this, rename “Extensions” in syntax edit sheet to “File Mapping.”
 - Add metadata fields for syntax styles.
-- Append a correspondent extension to the file name on saving.
+- Append a correspondent extension to the filename on saving.
     - The top extension in the extension list in the syntax style definition will be used.
     - From this, setting for “Append “txt” on saving” was deprecated.
         - If you want to keep using “txt” as default extension, set “Plain Text” syntax style as default style in Preferences > Format.
@@ -4821,7 +6032,7 @@ no change.
 - Add option to split views vertically.
 - Select lines via clicking/dragging line numbers.
 - Add “Select Line” command to “Edit” menu.
-- Add syntax styles for “AppleScript”, “C#”, “Go”, “Lisp”, “Lua”, “R”, “Scheme”, “SQL”, “SVG” and “Swift”.
+- Add syntax styles for AppleScript, C#, Go, Lisp, Lua, R, Scheme, SQL, SVG, and Swift.
 - Auto-complete feature (experimental implementation, turned off by default).
 
 
@@ -4859,37 +6070,37 @@ no change.
 - Scroll line by line with an arrow key.
 - Adjust indent automatically on return just after `{` and `}` if Auto-Indent is on. (thanks to Naotaka-san).
 - Update all of bundled syntax styles.
-- Update “CSS” syntax style:
+- Update CSS syntax style:
     - Support CSS level 3.
-- Update “Perl” syntax style:
+- Update Perl syntax style:
     - Add some keywords.
     - Add `=pod` and `=cut` to comment coloring.
-    - Add “pm” to extensions.
-- Update “JSON” syntax style:
-    - Add “cottheme” to extensions.
-- Update “LaTeX” syntax style:
-    - Add “cls” and “sty” to extensions.
+    - Add .pm to extensions.
+- Update JSON syntax style:
+    - Add .cottheme to extensions.
+- Update LaTeX syntax style:
+    - Add .cls and .sty to extensions.
     - Update outline menu style.
-- Update “YAML” syntax style:
+- Update YAML syntax style:
     - Support YAML 1.2.
     - Some fixes.
-- Update “Ruby” syntax style:
+- Update Ruby syntax style:
     - Support % notation.
     - Add special variables.
     - Improve number literals.
     - Support here document.
     - and some more fixes.
-- Update “Java” syntax style:
+- Update Java syntax style:
     - Improve number literals.
     - Support annotation.
     - and some more fixes.
-- Update “JavaScript” syntax style:
+- Update JavaScript syntax style:
     - Completely rewrite.
-- Update “Haskell” syntax style:
+- Update Haskell syntax style:
     - Improve number literals.
     - Add escape chars.
-- Separate “DTD” (Document Type Declaration) syntax style from “XML”.
-    - From this, coloring performance with “XML” syntax style was improved.
+- Separate DTD (Document Type Declaration) syntax style from XML.
+    - From this, coloring performance with XML syntax style was improved.
 - Updates about scripting support:
     - Migrate AppleScript API definition file to sdef format.
     - Rename `unicode normalization` command to `normalize unicode`.
@@ -4899,7 +6110,7 @@ no change.
 - Count characters by composed character sequence in the status bar and the info drawer.
         - The previous count was actually the length of the string in UTF-16 that is internal string expression on OS X (for example, a surrogate pair is counted previously as 2 and now as 1).
 - Rename previous “Char Count” to “Char Length” and add another “Char Count” with the new count method for status bar items.
-- Change key to display hidden menu items in “File” menu to “Option”.
+- Change key to display hidden menu items in “File” menu to “Option.”
 - Add `.` and `:` to word separators that are used for selecting a word with a double click.
 - Improve messages on character info inspector with surrogate pairs and variation selectors. (thanks to doraTeX-san)
 - Disable alert asking for save when blank & unsaved document will be closed. (thanks to Naotaka-san)
@@ -4909,10 +6120,10 @@ no change.
 - Improve syntax editor sheet so as to edit documents even the sheet is shown. (on Mavericks and later)
 - Improve application icon so as not to react with dropped folders.
 - Improve cancellation behavior of word completion.
-- Rename “Inspect Glyph” to “Inspect Character”.
+- Rename “Inspect Glyph” to “Inspect Character.”
 - Delay timing to store user’s menu key bindings.
     - The user setting for menu key bindings on CotEditor 1.x will be reset on the first launch of v2.0.
-- Change line hight value to line height based, that includes the hight of the line itself.
+- Change line height value to line height based, that includes the height of the line itself.
 - Change the default line-height value to 1.3.
 - Add thousand separators to values in document info.
 - Change date format in document info drawer.
@@ -4938,7 +6149,7 @@ no change.
 - Fix an issue that variation selectors, kind of invisible characters, disappeared occasionally.
 - Fix an issue that encoding selection in toolbar was reset after changing of encoding list order.
 - Fix over-wrapped text in the status bar to truncate with “…”.
-- Fix an issue that unfocused windows performed also re-coloring after “Replace All”.
+- Fix an issue that unfocused windows performed also re-coloring after “Replace All.”
 - Fix an issue that page guide was occasionally drawn at a wrong place if a fallback font is used.
 - Fix to highlight current line only in focused view of split views.
 - Fix an issue that text lines vibrated during moving caret if text orientation is vertical and line height is fixed.

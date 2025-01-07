@@ -10,7 +10,7 @@
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>1</integer>
 			<key>CFBundleTypeName</key>
-			<string>Plain text</string>
+			<string>Text document</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -20,8 +20,6 @@
 				<string>public.plain-text</string>
 				<string>public.text</string>
 				<string>public.data</string>
-				<string>com.coteditor.CotEditor.theme</string>
-				<string>com.coteditor.CotEditor.replacement</string>
 				<string>public.c-header</string>
 				<string>public.c-plus-plus-header</string>
 				<string>public.c-plus-plus-source</string>
@@ -62,6 +60,7 @@
 				<string>org.tug.tex</string>
 				<string>com.coteditor.conf</string>
 				<string>com.coteditor.lisp</string>
+				<string>com.coteditor.mojo</string>
 				<string>com.coteditor.scheme</string>
 				<string>com.coteditor.verilog</string>
 				<string>com.coteditor.vhdl</string>
@@ -70,6 +69,20 @@
 			<string>$(PRODUCT_MODULE_NAME).Document</string>
 			<key>NSUbiquitousDocumentUserActivityType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).editing</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Directory</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.directory</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>$(PRODUCT_MODULE_NAME).DirectoryDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -107,7 +120,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2005-2009 nakamuxu
 © 2011, 2014 usami-k
-© 2013-2023 1024jp</string>
+© 2013-2025 1024jp</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSServices</key>
@@ -116,7 +129,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>New CotEditor Document with Selection</string>
+				<string>New CotEditor Window Containing Selection</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>openSelection</string>
@@ -131,7 +144,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Open File in CotEditor</string>
+				<string>Open in CotEditor</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>openFile</string>
@@ -149,6 +162,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSSupportsAutomaticTermination</key>
+	<true/>
 	<key>NSUbiquitousContainers</key>
 	<dict>
 		<key>iCloud.com.coteditor.CotEditor</key>
@@ -172,7 +187,7 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.data</string>
+				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>CotEditor Theme</string>
@@ -196,7 +211,7 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.data</string>
+				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>CotEditor Replacement Definition</string>
@@ -214,6 +229,30 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>cotrpl</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.script</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>AWK script</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string>CurlyBrackets-fill</string>
+				<key>UTTypeIconText</key>
+				<string>config</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.coteditor.awk</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>awk</string>
 				</array>
 			</dict>
 		</dict>
@@ -263,6 +302,31 @@
 				<array>
 					<string>lisp</string>
 					<string>lsp</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Mojo script</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string>Mojo-fill</string>
+				<key>UTTypeIconText</key>
+				<string>mojo</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.coteditor.mojo</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mojo</string>
+					<string>🔥</string>
 				</array>
 			</dict>
 		</dict>
@@ -342,6 +406,20 @@
 					<string>text/x-vhdl</string>
 				</array>
 			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.plain-text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>UUID</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.coteditor.uuid</string>
+			<key>UTTypeTagSpecification</key>
+			<dict/>
 		</dict>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
@@ -651,7 +729,7 @@
 				<string>public.text</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Plain text</string>
+			<string>Plain text document</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconBackgroundName</key>
@@ -805,7 +883,7 @@
 				<string>public.plain-text</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>TeX</string>
+			<string>TeX document</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconBackgroundName</key>
@@ -831,7 +909,7 @@
 				<string>public.plain-text</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>TOML</string>
+			<string>TOML document</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconBackgroundName</key>
@@ -861,7 +939,7 @@
 				<string>public.text</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>XML</string>
+			<string>XML document</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconBackgroundName</key>

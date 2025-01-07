@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="keywords" content="文字化け, エンコーディング"/>
+	<link rel="stylesheet" href="../../Shared/sty/standard.css"/>
+	<script defer src="../../Shared/js/toc.js"></script>
+	
+	<title>MacのCotEditorで文字化けする場合</title>
+</head>
+
+<body>
+
+<h1>MacのCotEditorで文字化けする場合</h1>
+
+<p>文字化けは、ファイルのテキストエンコーディングをCotEditorが正しく認識できなかった場合に発生します。次の手順でエンコーディングを変更してください。</p>
+<ol>
+	<li>「フォーマット」メニューの「テキストエンコーディング」を開き、適切なエンコーディングを選択します。</li>
+	<li>「再解釈」をクリックします。</li>
+</ol>
+<p><img srcset="../gfx/encodingWindow@2x.png 2x" alt="「テキストエンコーディングの変更」ダイアログのスクリーンショット"/></p>
+<p>ダイアログのボタンの動作は、次の通りです。</p>
+<dl>
+	<dt>変換</dt>
+	<dd>現在のテキストを指定されたエンコーディングに変換します。</dd>
+	<dt>再解釈</dt>
+	<dd>指定されたエンコーディングでファイルを開き直します。</dd>
+	<dt>キャンセル</dt>
+	<dd>操作を取り消します。書類には何も変更は加えられません。</dd>
+</dl>
+
+<ul>
+	<li>エンコーディングの変更は、ステータスバーの「テキストエンコーディング」メニューからも行うことができます。</li>
+	<li>自動認識する際のエンコーディングの認識順序を調整することで、文字化けが発生する頻度をより少なくできます。<br />
+	→ <a href="howto_customize_encoding_order.html">テキストエンコーディングの優先順位を変更する</a></li>
+	<li>設定で「書類中のエンコーディング宣言を参照」が有効になっていると、エンコーディングの自動認識で書類中にある<code>encoding=</code>, <code>@charset</code>などの宣言として記述されているエンコーディングが優先されます。<br />
+	→ <a href="about_autodetect_charset.html">エンコーディング宣言を参照する</a></li>
+</ul>
+
+
+<section id="cf">
+<h2>関連項目</h2>
+<ul>
+	<li><a href="howto_customize_encoding_order.html">テキストエンコーディングの優先順位を変更する</a></li>
+	<li><a href="about_autodetect_charset.html">エンコーディング宣言を参照する</a></li>
+	<li><a href="about_shiftjis.html">Shift JIS系のエンコーディングを使い分ける</a></li>
+</ul>
+</section>
+
+</body>
+</html>

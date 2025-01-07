@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="keywords" content="syntax, style"/>
+	<link rel="stylesheet" href="../../Shared/sty/standard.css"/>
+	<script defer src="../../Shared/js/toc.js"></script>
+	
+	<title>Define syntax highlighting in CotEditor on Mac</title>
+</head>
+
+<body>
+<a name="syntax_highlight_settings"></a>
+
+<h1>Define syntax highlighting in CotEditor on Mac</h1>
+
+<p>Syntax highlighting is the feature to color words in a document depending on specific rules. A typical use is to colorize programming source code according to the grammatical function of terms, such as commands or variables, to make the structure of the program easier to understand. Other uses are coloring headings in structured languages such as Markdown, making certain characters that should not be used stand out, and many other uses depending on the type of document.</p>
+
+<p>In CotEditor, a syntax rules the semantic meaning of the syntax highlighting, and the color scheme used in the actual highlighting is defined as a <a href="howto_customize_theme.html">theme</a>.</p>
+
+<p>To define highlighting defines for a syntax, select a syntax element to add a highlighting condition from the list on the left of the syntax editor, then add conditions to the list on the right side. See <a href="syntax_definition.html">Define a syntax</a> for how to open the syntax editor.</p>
+
+
+<h2>Elements of syntax highlighting</h2>
+
+<p>CotEditor predefines the types of elements for the syntax highlighting already for the theme. They are:</p>
+
+<table>
+	<thead>
+		<tr><th>Element</th><th>Description</th><th>Examples</th></tr>
+	</thead>
+	
+	<tbody>
+	<tr><th>Keywords</th>
+	<td>Keywords in source code such as reserved words of programming languages.</td>
+	<td><code>for</code>, <code>while</code>, <code>if</code></td></tr>
+	
+	<tr><th>Commands</th>
+	<td>Functions or commands in source code.</td>
+	<td><code>print</code>, <code>filter</code>, <code>func()</code></td></tr>
+	
+	<tr><th>Types</th>
+	<td>Types in source code or headings in structured language.</td>
+	<td><code>int</code>, <code>bool</code>, <code>Object</code></td></tr>
+	
+	<tr><th>Attributes</th>
+	<td>Attributes in source code.</td>
+	<td><code>&lt;html <span style="color:-apple-system-blue">lang</span>=&quot;ja&quot;&gt;</code>, <code>@classmethod</code></td></tr>
+	
+	<tr><th>Variables</th>
+	<td>Variables in source code.</td>
+	<td><code>$foo</code>, <code>self</code></td></tr>
+	
+	<tr><th>Values</th>
+	<td>Value constants in source code.</td>
+	<td><code>Null</code>, <code>True</code>, <code>False</code></td></tr>
+	
+	<tr><th>Numbers</th>
+	<td>Numeric constants in source code.</td>
+	<td><code>Int i = <span style="color: -apple-system-blue;">0</span>;</code></td></tr>
+	
+	<tr><th>Strings</th>
+	<td>String constants in source code.</td>
+	<td><code>String s = <span style="color: -apple-system-blue">&quot;Hello World&quot;</span></code></td></tr>
+	
+	<tr><th>Characters</th>
+	<td>Character constants in source code.</td>
+	<td><code>Char c = <span style="color: -apple-system-blue">'a'</span></code></td></tr>
+	
+	<tr><th>Comments</th>
+	<td>Comments in source code.</td>
+	<td><code>/* 〜 */</code>, <code># 〜</code></td></tr>
+	</tbody>
+</table>
+
+<p>CotEditor colors the elements from the top to the bottom: like Keywords, Commands, Types, and so on. When the document contains an item matching multiple categories (for example, keywords and commands), the color of the latter in the order overwrites the former’s. The name of each element is just for reference and thus can actually apply also to other grammatical uses.</p>
+
+
+
+<h2>Customize syntax highlighting</h2>
+
+<p>To define the way to highlight, register either a specific string, a pair of the start and end strings, or a regular expression pattern as a highlighting condition for each highlighting element.</p>
+
+<p>Highlighting rules are determined by the following settings:</p>
+
+<table>
+	<thead>
+		<tr><th>Field</th><th>Description</th></tr>
+	</thead>
+	<tbody>
+		<tr><th>RE</th><td>If selected, both the begin and end strings are considered as regular expressions (RE stands for Regular Expression).</td></tr>
+		<tr><th>IC</th><td>If selected, the case is ignored for searching (IC stands for Ignore Case). For example, if you set “abc” as the begin string and select IC, “ABC” or “abc” or “Abc” in your document will be matched.</td></tr>
+		<tr><th>Begin String</th><td>A string that denotes the beginning of the search pattern. This is required to search the code elements you want to be colored.</td></tr>
+		<tr><th>End String</th><td>A string that denotes the end of the search pattern. This field can be left blank.</td></tr>
+		<tr><th>Description</th><td>You can use this field to leave a comment about the term. Description doesn’t affect syntax highlighting. This field can be left blank.</td></tr>
+	</tbody>
+</table>
+
+<p>By defining conditions:</p>
+<ul>
+	<li>A condition whose begin string is blank is ignored.</li>
+	<li>The RE setting affects both the begin and end strings, which means they should be written in the regular expression or plain form both together.</li>
+</ul>
+
+
+<h2>Completion candidates</h2>
+
+<p>A condition whose end string is blank and the regular expression option is unselected is used for defining the completion list as well.</p>
+
+
+<section id="cf">
+<h2>See also</h2>
+<ul>
+	<li><a href="syntax_definition.html">Define a syntax</a></li>
+	<li><a href="about_regex.html">Use the regular expression</a></li>
+</ul>
+</section>
+
+</body>
+</html>

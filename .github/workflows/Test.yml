@@ -4,29 +4,26 @@ on: [push, pull_request]
 
 jobs:
   macOS:
-    runs-on: macos-13
+    runs-on: macos-15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.2.app
 
     steps:
     - name: Show environments
       run: |
-        sw_vers
         xcodebuild -version
         swift --version
-    - uses: actions/checkout@v1
-    - name: Checkout submodules
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Unit Test for EditorCore
       run: |
-        git submodule update --init
-    - name: Lint Swift
+        swift test --package-path Packages/EditorCore
+    - name: Unit Test for MacUI
       run: |
-        swiftlint
-    - name: Unit Test
-      env:
-        DEVELOPER_DIR: /Applications/Xcode_14.1.app
+        swift test --package-path Packages/MacUI
+    - name: Unit Test for SyntaxMap
       run: |
-        set -o pipefail
-        xcodebuild test -project CotEditor.xcodeproj -scheme CotEditor CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
-    - name: Unit Test for SyntaxMapBuilder
+        swift test --package-path Packages/SyntaxMap
+    - name: Unit Test for CotEditor
       run: |
-        cd SyntaxMapBuilder
-        swift build
-        swift test 2>&1 | xcpretty -c
+        xcodebuild test -project CotEditor.xcodeproj -scheme CotEditor CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -skipPackagePluginValidation
